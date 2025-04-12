@@ -28,7 +28,24 @@
   },
   "testimonials": {
     "title": "What Our Clients Say",
-    "readMore": "Read More"
+    "readMore": "Read More",
+    "clients": {
+      "first": {
+        "name": "EMMA & JAMES",
+        "date": "12.06.2023",
+        "text": "After several meetings with different coordinators, we decided on Hewan's Event. They were professional, attentive, and made our vision come to life perfectly."
+      },
+      "second": {
+        "name": "SOPHIA & MICHAEL",
+        "date": "24.09.2023",
+        "text": "Hewan's team took care of every detail. They were warm and caring with a high level of service, giving tips throughout the planning process."
+      },
+      "third": {
+        "name": "OLIVIA & WILLIAM",
+        "date": "03.05.2023",
+        "text": "We are incredibly grateful for the attention to detail and the elegant touch Hewan's Event brought to our wedding day. Everything was perfect."
+      }
+    }
   },
   "gallery": {
     "title": "Our Gallery",

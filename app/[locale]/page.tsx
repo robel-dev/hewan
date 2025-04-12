@@ -25,21 +25,22 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-screen w-full overflow-hidden">
         <Image
-          src="/softly-lit-wedding.png"
+          //src="/softly-lit-wedding.png"
+          src="/hewan-photos/hewans-event-6.png"
           alt="Elegant wedding venue"
           fill
           priority
-          className="object-cover object-center"
+          className="object-cover object-center scale-140"
         />
         <div className="absolute inset-0 bg-black/20" />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white">
+        <div className="absolute inset-0 flex flex-col items-center justify-center translate-y-48 text-center text-white">
           <h1 className="font-display text-4xl font-light tracking-[0.2em] md:text-5xl lg:text-6xl">
             {t('hero.title')}
           </h1>
           <p className="mt-6 max-w-md font-sans text-xs font-light tracking-[0.25em] md:text-sm">
             {t('hero.subtitle')}
           </p>
-          <div className="mt-10">
+          <div className="mt-10 -translate-x-16">
             <Link href="#contact">
               <Button
                 variant="outline"
@@ -104,22 +105,22 @@ export default function Home() {
           </h2>
           <div className="grid gap-8 md:grid-cols-3">
             <TestimonialCard
-              name="EMMA & JAMES"
-              date="12.06.2023"
-              image="/timeless-elegance.png"
-              testimonial="After several meetings with different coordinators, we decided on Hewan's Event. They were professional, attentive, and made our vision come to life perfectly."
+              name={t('testimonials.clients.first.name')}
+              date={t('testimonials.clients.first.date')}
+              image="/hewan-photos/sandro-selam.jpg"
+              testimonial={t('testimonials.clients.first.text')}
             />
             <TestimonialCard
-              name="SOPHIA & MICHAEL"
-              date="24.09.2023"
-              image="/timeless-elegance.png"
-              testimonial="Hewan's team took care of every detail. They were warm and caring with a high level of service, giving tips throughout the planning process."
+              name={t('testimonials.clients.second.name')}
+              date={t('testimonials.clients.second.date')}
+              image="/hewan-photos/sandro-selam.jpg"
+              testimonial={t('testimonials.clients.second.text')}
             />
             <TestimonialCard
-              name="OLIVIA & WILLIAM"
-              date="03.05.2023"
-              image="/timeless-elegance.png"
-              testimonial="We are incredibly grateful for the attention to detail and the elegant touch Hewan's Event brought to our wedding day. Everything was perfect."
+              name={t('testimonials.clients.third.name')}
+              date={t('testimonials.clients.third.date')}
+              image="/hewan-photos/sandro-selam.jpg"
+              testimonial={t('testimonials.clients.third.text')}
             />
           </div>
         </div>

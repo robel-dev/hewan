@@ -28,7 +28,24 @@
   },
   "testimonials": {
     "title": "Vad Våra Kunder Säger",
-    "readMore": "Läs Mer"
+    "readMore": "Läs Mer",
+    "clients": {
+      "first": {
+        "name": "EMMA & JAMES",
+        "date": "12.06.2023",
+        "text": "Efter flera möten med olika koordinatorer valde vi Hewan's Event. De var professionella, uppmärksamma och förverkligade vår vision perfekt."
+      },
+      "second": {
+        "name": "SOPHIA & MICHAEL",
+        "date": "24.09.2023",
+        "text": "Hewans team tog hand om varje detalj. De var varma och omtänksamma med hög servicenivå och gav tips under hela planeringsprocessen."
+      },
+      "third": {
+        "name": "OLIVIA & WILLIAM",
+        "date": "03.05.2023",
+        "text": "Vi är otroligt tacksamma för uppmärksamheten på detaljer och den eleganta touchen som Hewan's Event gav vår bröllopsdag. Allt var perfekt."
+      }
+    }
   },
   "gallery": {
     "title": "Vårt Galleri",

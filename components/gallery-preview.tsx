@@ -7,32 +7,27 @@ export default function GalleryPreview() {
 
   const images = [
     {
-      src: "/refined-wedding-moment.png",
+      src: "/hewan-photos/hewan-8.jpg",
       alt: "Wedding ceremony",
     },
     {
-      src: "/placeholder.svg?height=600&width=400&query=elegant wedding floral arch",
-      alt: "Wedding floral arch",
-    },
-    {
-      src: "/placeholder.svg?height=600&width=400&query=elegant wedding couple portrait",
-      alt: "Wedding couple portrait",
-    },
-    {
-      src: "/placeholder.svg?height=600&width=400&query=elegant wedding reception table",
-      alt: "Wedding reception table",
-    },
-    {
-      src: "/placeholder.svg?height=600&width=400&query=elegant wedding cake",
-      alt: "Wedding cake",
-    },
-    {
-      src: "/placeholder.svg?height=600&width=400&query=elegant wedding venue decoration",
-      alt: "Wedding venue decoration",
-    },
-    {
-      src: "/placeholder.svg?height=600&width=400&query=elegant wedding bride and groom",
-      alt: "Bride and groom",
+      src: "/hewan-photos/hewan-1.jpg",
+      alt: "Wedding ceremony",
+    }, {
+      src: "/hewan-photos/hewan-2.jpg",
+      alt: "Wedding ceremony",
+    }, {
+      src: "/hewan-photos/hewan-5.jpg",
+      alt: "Wedding ceremony",
+    }, {
+      src: "/hewan-photos/hewan-3.jpg",
+      alt: "Wedding ceremony",
+    }, {
+      src: "/hewan-photos/hewan-6.jpg",
+      alt: "Wedding ceremony",
+    }, {
+      src: "/hewan-photos/hewan-7.jpg",
+      alt: "Wedding ceremony",
     },
   ]
 
