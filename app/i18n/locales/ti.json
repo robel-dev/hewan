@@ -1,0 +1,51 @@
+{
+  "navigation": {
+    "home": "መበል",
+    "services": "ኣገልግሎታት",
+    "gallery": "ጋለሪ",
+    "contact": "ርክብ",
+    "blog": "ብሎግ"
+  },
+  "hero": {
+    "title": "ፍሉይ ህሞታትኩም ንምዕቃብ",
+    "subtitle": "ሞያዊ ፎቶግራፍን ቪድዮግራፍን ኣገልግሎታት",
+    "cta": "ሕጂ ሕዝብዎ"
+  },
+  "services": {
+    "title": "ኣገልግሎታትና",
+    "wedding": {
+      "title": "ሓዳር ፎቶግራፍ",
+      "description": "ፍሉይ መዓልትኹም ብጽፈትን ስታይልን ምዕቃብ"
+    },
+    "portrait": {
+      "title": "ፖርትረይት ክፍለ-ግዜታት",
+      "description": "ታሪኽኩም ዝነግር ሞያዊ ፖርትረይት"
+    },
+    "event": {
+      "title": "ፍጻመታት ሽፋን",
+      "description": "ፍሉያት ፍጻመታትኩም ምሉእ ሽፋን"
+    }
+  },
+  "testimonials": {
+    "title": "ዓማዊልና እንታይ ይብሉ",
+    "readMore": "ተወሳኺ ኣንብብ"
+  },
+  "gallery": {
+    "title": "ጋለሪና",
+    "viewMore": "ተወሳኺ ርአ"
+  },
+  "contact": {
+    "title": "ርክብ ግበሩ",
+    "name": "ስም",
+    "email": "ኢመይል",
+    "message": "መልእኽቲ",
+    "submit": "መልእኽቲ ስደድ"
+  },
+  "blog": {
+    "title": "ብሎግና",
+    "posts": {
+      "post": "ታሪኽ መርዓ {number}",
+      "excerpt": "ናይዚ ጽቡቕ በዓል ማዕረግ ስሚዒትን ድምቀትን ተዓዘቡ። ዝተቐርጸ ነፍሲ ወከፍ ህሞት ናይ ፍቕሪ፣ ሓጎስን ዘይርስዑ ዝኽርታትን ፍሉይ ታሪኽ ይነግር።"
+    }
+  }
+} 

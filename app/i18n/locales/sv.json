@@ -1,0 +1,51 @@
+{
+  "navigation": {
+    "home": "Hem",
+    "services": "Tjänster",
+    "gallery": "Galleri",
+    "contact": "Kontakt",
+    "blog": "Blogg"
+  },
+  "hero": {
+    "title": "Fångar Dina Speciella Ögonblick",
+    "subtitle": "Professionella Foto- och Videografitjänster",
+    "cta": "Boka Nu"
+  },
+  "services": {
+    "title": "Våra Tjänster",
+    "wedding": {
+      "title": "Bröllopsfotografering",
+      "description": "Fångar din speciella dag med elegans och stil"
+    },
+    "portrait": {
+      "title": "Porträttsessioner",
+      "description": "Professionella porträtt som berättar din historia"
+    },
+    "event": {
+      "title": "Evenemangsfotografering",
+      "description": "Omfattande dokumentation av dina speciella evenemang"
+    }
+  },
+  "testimonials": {
+    "title": "Vad Våra Kunder Säger",
+    "readMore": "Läs Mer"
+  },
+  "gallery": {
+    "title": "Vårt Galleri",
+    "viewMore": "Visa Mer"
+  },
+  "contact": {
+    "title": "Kontakta Oss",
+    "name": "Namn",
+    "email": "E-post",
+    "message": "Meddelande",
+    "submit": "Skicka Meddelande"
+  },
+  "blog": {
+    "title": "Vår Blogg",
+    "posts": {
+      "post": "Bröllopsberättelse {number}",
+      "excerpt": "Upplev magin och känslan i denna vackra ceremoni. Varje fångat ögonblick berättar en unik historia om kärlek, glädje och oförglömliga minnen."
+    }
+  }
+} 

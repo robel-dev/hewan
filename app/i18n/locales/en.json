@@ -1,0 +1,51 @@
+{
+  "navigation": {
+    "home": "Home",
+    "services": "Services",
+    "gallery": "Gallery",
+    "contact": "Contact",
+    "blog": "Blog"
+  },
+  "hero": {
+    "title": "Capturing Your Special Moments",
+    "subtitle": "Professional Photography & Videography Services",
+    "cta": "Book Now"
+  },
+  "services": {
+    "title": "Our Services",
+    "wedding": {
+      "title": "Wedding Photography",
+      "description": "Capturing your special day with elegance and style"
+    },
+    "portrait": {
+      "title": "Portrait Sessions",
+      "description": "Professional portraits that tell your story"
+    },
+    "event": {
+      "title": "Event Coverage",
+      "description": "Comprehensive coverage of your special events"
+    }
+  },
+  "testimonials": {
+    "title": "What Our Clients Say",
+    "readMore": "Read More"
+  },
+  "gallery": {
+    "title": "Our Gallery",
+    "viewMore": "View More"
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "submit": "Send Message"
+  },
+  "blog": {
+    "title": "Our Blog",
+    "posts": {
+      "post": "Wedding Story {number}",
+      "excerpt": "Experience the magic and emotion of this beautiful celebration. Every moment captured tells a unique story of love, joy, and unforgettable memories."
+    }
+  }
+} 
