@@ -82,7 +82,7 @@ const allImages = [
     category: "venue"
   },
   {
-    id: 9,
+    id: 10,
     src: "/hewan-photos/hewan-8.jpg",
     alt: "Celebration Setup",
     title: "Celebration Setup",
@@ -90,7 +90,7 @@ const allImages = [
     category: "venue"
   },
   {
-    id: 10,
+    id: 11,
     src: "/hewan-photos/hewan-jebena.jpg",
     alt: "Traditional Coffee Ceremony",
     title: "Coffee Ceremony",
@@ -98,7 +98,7 @@ const allImages = [
     category: "ceremony"
   },
   {
-    id: 11,
+    id: 12,
     src: "/hewan-photos/20230723_145426.jpg",
     alt: "Summer Event",
     title: "Summer Celebration",
@@ -106,7 +106,7 @@ const allImages = [
     category: "reception"
   },
   {
-    id: 12,
+    id: 13,
     src: "/hewan-photos/20230723_145451.jpg",
     alt: "Event Setup",
     title: "Event Arrangement",
@@ -114,7 +114,7 @@ const allImages = [
     category: "venue"
   },
   {
-    id: 13,
+    id: 14,
     src: "/hewan-photos/20230723_145614.jpg",
     alt: "Celebration Details",
     title: "Celebration Details",
@@ -122,7 +122,7 @@ const allImages = [
     category: "reception"
   },
   {
-    id: 14,
+    id: 15,
     src: "/hewan-photos/20230723_150401.jpg",
     alt: "Event Celebration",
     title: "Festive Moments",
@@ -130,7 +130,7 @@ const allImages = [
     category: "ceremony"
   },
   {
-    id: 15,
+    id: 16,
     src: "/hewan-photos/20230723_185414.jpg",
     alt: "Evening Celebration",
     title: "Evening Event",
@@ -138,7 +138,7 @@ const allImages = [
     category: "reception"
   },
   {
-    id: 16,
+    id: 17,
     src: "/hewan-photos/20230723_190215.jpg",
     alt: "Night Celebration",
     title: "Night Festivities",
@@ -146,7 +146,7 @@ const allImages = [
     category: "reception"
   },
   {
-    id: 17,
+    id: 18,
     src: "/hewan-photos/hewans-event.jpg",
     alt: "Hewan's Event Main",
     title: "Signature Event",
@@ -154,7 +154,7 @@ const allImages = [
     category: "venue"
   },
   {
-    id: 18,
+    id: 19,
     src: "/hewan-photos/hewans-event-2.jpg",
     alt: "Event Setup",
     title: "Event Design",
@@ -162,20 +162,12 @@ const allImages = [
     category: "venue"
   },
   {
-    id: 19,
+    id: 20,
     src: "/hewan-photos/hewans-event-3.jpg",
     alt: "Celebration Setup",
     title: "Celebration Design",
     location: "Stockholm",
     category: "venue"
-  },
-  {
-    id: 20,
-    src: "/hewan-photos/20230225_174625.jpg",
-    alt: "Winter Celebration",
-    title: "Winter Event",
-    location: "Stockholm",
-    category: "ceremony"
   }
 ];
 
@@ -276,50 +268,12 @@ export default function GalleryPage() {
 
   return (
     <div className="min-h-screen bg-[#faf9f8]">
-      {/* Header with filter */}
-      <header className="fixed left-0 right-0 top-0 z-40 bg-white/70 px-4 py-4 backdrop-blur-sm">
-        <div className="mx-auto flex max-w-7xl items-center justify-between">
-          <h1 className="font-display text-2xl font-light tracking-[0.15em] text-neutral-800">
-            {t('gallery.title')}
-          </h1>
-
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="outline" size="sm" className="gap-2 font-display text-xs tracking-widest">
-                <Filter size={16} />
-                {category === "all"
-                  ? "All Photos"
-                  : category === "venue"
-                    ? "Venues"
-                    : category === "ceremony"
-                      ? "Ceremonies"
-                      : "Receptions"}
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="bg-white/95 backdrop-blur-sm">
-              <DropdownMenuItem className="font-display text-xs tracking-widest" onClick={() => setCategory("all")}>
-                All Photos
-              </DropdownMenuItem>
-              <DropdownMenuItem className="font-display text-xs tracking-widest" onClick={() => setCategory("venue")}>
-                Venues
-              </DropdownMenuItem>
-              <DropdownMenuItem className="font-display text-xs tracking-widest" onClick={() => setCategory("ceremony")}>
-                Ceremonies
-              </DropdownMenuItem>
-              <DropdownMenuItem className="font-display text-xs tracking-widest" onClick={() => setCategory("reception")}>
-                Receptions
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </div>
-      </header>
-
       {/* Photo Album Grid */}
       <div className="pt-24">
         <div className="photo-album">
           {visibleImages.map((image, index) => (
             <div
-              key={image.id}
+              key={`${image.id}-${index}`}
               className="photo-item group relative cursor-pointer overflow-hidden"
               onClick={() => openLightbox(index)}
             >

@@ -8,6 +8,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import { useTranslations } from 'next-intl'
 import { useLocale } from 'next-intl'
 import { i18nConfig } from '@/app/i18n/config'
+import { usePathname } from 'next/navigation'
 
 type Locale = 'en' | 'sv' | 'ti';
 
@@ -16,6 +17,12 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const t = useTranslations();
   const locale = useLocale() as Locale;
+  const pathname = usePathname();
+
+  const isActive = (path: string) => {
+    const currentPath = pathname.split('/')[2] || '';
+    return path === `/${locale}/${currentPath}` || (path === `/${locale}` && currentPath === '');
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,22 +42,34 @@ export default function Header() {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 md:px-6">
         <nav className="hidden items-center space-x-8 md:flex">
-          <Link href={`/${locale}`} className={cn(
-            "font-display text-sm tracking-widest hover:text-neutral-600",
-            isScrolled ? "text-neutral-800" : "text-white"
-          )}>
+          <Link 
+            href={`/${locale}`} 
+            className={cn(
+              "font-display text-sm tracking-widest hover:text-neutral-600 relative",
+              isScrolled ? "text-neutral-800" : "text-white",
+              isActive(`/${locale}`) && "after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-full after:h-[2px] after:bg-current"
+            )}
+          >
             {t('navigation.home')}
           </Link>
-          <Link href={`/${locale}/services`} className={cn(
-            "font-display text-sm tracking-widest hover:text-neutral-600",
-            isScrolled ? "text-neutral-800" : "text-white"
-          )}>
+          <Link 
+            href={`/${locale}/services`} 
+            className={cn(
+              "font-display text-sm tracking-widest hover:text-neutral-600 relative",
+              isScrolled ? "text-neutral-800" : "text-white",
+              isActive(`/${locale}/services`) && "after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-full after:h-[2px] after:bg-current"
+            )}
+          >
             {t('navigation.services')}
           </Link>
-          <Link href={`/${locale}/gallery`} className={cn(
-            "font-display text-sm tracking-widest hover:text-neutral-600",
-            isScrolled ? "text-neutral-800" : "text-white"
-          )}>
+          <Link 
+            href={`/${locale}/gallery`} 
+            className={cn(
+              "font-display text-sm tracking-widest hover:text-neutral-600 relative",
+              isScrolled ? "text-neutral-800" : "text-white",
+              isActive(`/${locale}/gallery`) && "after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-full after:h-[2px] after:bg-current"
+            )}
+          >
             {t('navigation.gallery')}
           </Link>
         </nav>
@@ -63,16 +82,23 @@ export default function Header() {
         </Link>
 
         <nav className="hidden items-center space-x-8 md:flex">
-          <Link href={`/${locale}/blog`} className={cn(
-            "font-display text-sm tracking-widest hover:text-neutral-600",
-            isScrolled ? "text-neutral-800" : "text-white"
-          )}>
+          <Link 
+            href={`/${locale}/blog`} 
+            className={cn(
+              "font-display text-sm tracking-widest hover:text-neutral-600 relative",
+              isScrolled ? "text-neutral-800" : "text-white",
+              isActive(`/${locale}/blog`) && "after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-full after:h-[2px] after:bg-current"
+            )}
+          >
             {t('navigation.blog')}
           </Link>
-          <Link href="#contact" className={cn(
-            "font-display text-sm tracking-widest hover:text-neutral-600",
-            isScrolled ? "text-neutral-800" : "text-white"
-          )}>
+          <Link 
+            href="#contact" 
+            className={cn(
+              "font-display text-sm tracking-widest hover:text-neutral-600",
+              isScrolled ? "text-neutral-800" : "text-white"
+            )}
+          >
             {t('navigation.contact')}
           </Link>
 
@@ -141,35 +167,50 @@ export default function Header() {
           <nav className="flex flex-col space-y-6">
             <Link
               href={`/${locale}`}
-              className="font-display text-base tracking-widest text-neutral-800"
+              className={cn(
+                "font-display text-base tracking-widest text-neutral-800 relative",
+                isActive(`/${locale}`) && "after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-full after:h-[2px] after:bg-current"
+              )}
               onClick={() => setIsMenuOpen(false)}
             >
               {t('navigation.home')}
             </Link>
             <Link
               href={`/${locale}/services`}
-              className="font-display text-base tracking-widest text-neutral-800"
+              className={cn(
+                "font-display text-base tracking-widest text-neutral-800 relative",
+                isActive(`/${locale}/services`) && "after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-full after:h-[2px] after:bg-current"
+              )}
               onClick={() => setIsMenuOpen(false)}
             >
               {t('navigation.services')}
             </Link>
             <Link
               href={`/${locale}/gallery`}
-              className="font-display text-base tracking-widest text-neutral-800"
+              className={cn(
+                "font-display text-base tracking-widest text-neutral-800 relative",
+                isActive(`/${locale}/gallery`) && "after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-full after:h-[2px] after:bg-current"
+              )}
               onClick={() => setIsMenuOpen(false)}
             >
               {t('navigation.gallery')}
             </Link>
             <Link 
               href={`/${locale}/blog`}
-              className="font-display text-base tracking-widest text-neutral-800" 
+              className={cn(
+                "font-display text-base tracking-widest text-neutral-800 relative",
+                isActive(`/${locale}/blog`) && "after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-full after:h-[2px] after:bg-current"
+              )}
               onClick={() => setIsMenuOpen(false)}
             >
               {t('navigation.blog')}
             </Link>
             <Link
               href="#contact"
-              className="font-display text-base tracking-widest text-neutral-800"
+              className={cn(
+                "font-display text-base tracking-widest text-neutral-800 relative",
+                isActive(`/${locale}/contact`) && "after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-full after:h-[2px] after:bg-current"
+              )}
               onClick={() => setIsMenuOpen(false)}
             >
               {t('navigation.contact')}
