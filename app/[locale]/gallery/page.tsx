@@ -187,6 +187,7 @@ export default function GalleryPage() {
   const [showInfo, setShowInfo] = useState(true)
   const loaderRef = useRef<HTMLDivElement>(null)
   const lightboxRef = useRef<HTMLDivElement>(null)
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   // Filter images based on selected category
   const filteredImages = category === "all" ? allImages : allImages.filter((img) => img.category === category)
@@ -236,17 +237,15 @@ export default function GalleryPage() {
     }, 800)
   }
 
-  const openLightbox = (index: number) => {
-    setCurrentImage(index)
-    setLightboxOpen(true)
-    setIsZoomed(false)
-    document.body.style.overflow = "hidden"
-  }
+  const openLightbox = (imageSrc: string) => {
+    setSelectedImage(imageSrc);
+    document.body.style.overflow = 'hidden'; // Prevent scrolling when lightbox is open
+  };
 
   const closeLightbox = () => {
-    setLightboxOpen(false)
-    document.body.style.overflow = "auto"
-  }
+    setSelectedImage(null);
+    document.body.style.overflow = 'auto'; // Restore scrolling
+  };
 
   const goToPrevious = useCallback(() => {
     setCurrentImage((prev) => (prev === 0 ? visibleImages.length - 1 : prev - 1))
@@ -275,7 +274,7 @@ export default function GalleryPage() {
             <div
               key={`${image.id}-${index}`}
               className="photo-item group relative cursor-pointer overflow-hidden"
-              onClick={() => openLightbox(index)}
+              onClick={() => openLightbox(image.src)}
             >
               <Image
                 src={image.src || "/placeholder.svg"}
@@ -325,31 +324,30 @@ export default function GalleryPage() {
         </Button>
       </div>
 
-      {/* Enhanced Lightbox */}
-      {lightboxOpen && visibleImages.length > 0 && (
+      {/* Lightbox */}
+      {selectedImage && (
         <div
-          ref={lightboxRef}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-95 transition-opacity duration-300 ease-in-out"
-          onClick={(e) => {
-            if (e.target === lightboxRef.current) closeLightbox()
-          }}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
+          onClick={closeLightbox}
         >
-          {/* [Keep all the existing lightbox controls] */}
-          
-          {/* Image info */}
-          {showInfo && (
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 pt-12 text-center text-white transition-opacity duration-300">
-              <h3 className="font-display text-2xl font-light tracking-wider">{visibleImages[currentImage].title}</h3>
-              <p className="mt-1 font-sans text-gray-300">{visibleImages[currentImage].location}</p>
-              <p className="mt-2 font-display text-sm tracking-wider text-gray-400">{visibleImages[currentImage].category}</p>
-            </div>
-          )}
-
-          {/* Keyboard shortcuts info */}
-          <div className="absolute bottom-4 right-4 font-display text-xs tracking-wider text-gray-500">
-            <span className="mr-2">← → arrows to navigate</span>
-            <span className="mr-2">space to zoom</span>
-            <span>esc to close</span>
+          <button
+            className="absolute right-4 top-4 z-50 rounded-full bg-black/50 p-2 text-white hover:bg-black/70"
+            onClick={(e) => {
+              e.stopPropagation();
+              closeLightbox();
+            }}
+          >
+            <X size={24} />
+          </button>
+          <div className="relative h-full w-full">
+            <Image
+              src={selectedImage}
+              alt="Selected image"
+              fill
+              className="object-contain"
+              onClick={(e) => e.stopPropagation()}
+              priority
+            />
           </div>
         </div>
       )}
