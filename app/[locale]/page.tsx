@@ -95,7 +95,7 @@ export default function Home() {
           <p className="mt-6 max-w-md font-sans text-xs font-light tracking-[0.25em] md:text-sm">
             {t('hero.subtitle')}
           </p>
-          <div className="mt-10 -translate-x-16">
+          <div className="mt-10">
             <Link href="#contact">
               <Button
                 variant="outline"
