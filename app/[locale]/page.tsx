@@ -19,6 +19,9 @@ import { Instagram } from "lucide-react"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Heart, MessageCircle, Play } from "lucide-react" // Assuming these are used for likes/comments
 
+// Import the partner carousel component
+import LogoReel from "@/components/partner-carousel"
+
 type Locale = 'en' | 'sv' | 'ti';
 
 // Sample Instagram posts data (Update with Hewan's Event details)
@@ -162,6 +165,17 @@ export default function Home() {
               </Button>
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Partners Section - Add this before the Social Media Feed Section */}
+      <section className="py-16 bg-white">
+        <div className="mx-auto max-w-6xl px-4">
+          <LogoReel 
+            title={t('partners.title')} 
+            subtitle={t('partners.subtitle')}
+            speed={40}
+          />
         </div>
       </section>
 
