@@ -74,21 +74,34 @@ const instagramPosts = [
 export default function Home() {
   const t = useTranslations();
   const locale = useLocale() as Locale;
+  // Add state to handle video loading if needed
+  const [videoLoaded, setVideoLoaded] = useState(false);
 
   return (
     <main className="min-h-screen bg-[#faf9f8]">
-      {/* Hero Section */}
+      {/* Hero Section with Video */}
       <section className="relative h-screen w-full overflow-hidden">
-        <Image
-          //src="/softly-lit-wedding.png"
-          src="/hewan-photos/hewans-event-6.png"
-          alt="Elegant wedding venue"
-          fill
-          priority
-          className="object-cover object-center scale-140"
-        />
-        <div className="absolute inset-0 bg-black/20" />
-        <div className="absolute inset-0 flex flex-col items-center justify-center translate-y-48 text-center text-white">
+        {/* Video Background */}
+        <div className="absolute inset-0 bg-black">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="h-full w-full object-cover"
+            poster="/hewan-photos/hewans-event-6.png" // Fallback image while video loads
+            onLoadedData={() => setVideoLoaded(true)}
+          >
+            <source src="/videos/hewan-video.mp4" type="video/mp4" />
+            {/* Your browser does not support the video tag. */}
+          </video>
+        </div>
+        
+        {/* Overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/30" />
+        
+        {/* Hero content (title, subtitle, button) */}
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white">
           <h1 className="font-display text-4xl font-light tracking-[0.2em] md:text-5xl lg:text-6xl">
             {t('hero.title')}
           </h1>
