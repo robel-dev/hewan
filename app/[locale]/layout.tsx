@@ -55,11 +55,12 @@ async function getMessages(locale: string) {
 
 export default async function LocaleLayout({
   children,
-  params: { locale },
+  params,
 }: {
   children: React.ReactNode;
   params: { locale: string };
 }) {
+  const locale = params.locale;
   let messages;
 
   try {
@@ -68,7 +69,6 @@ export default async function LocaleLayout({
     notFound();
   }
 
-  // Validate that the incoming locale is in our config
   if (!i18nConfig.locales.includes(locale as any)) {
     notFound();
   }
@@ -78,7 +78,7 @@ export default async function LocaleLayout({
       <head>
         <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;700&display=swap" rel="stylesheet" />
       </head>
-      <body className="font-sans antialiased">
+      <body className="font-lora antialiased">
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Header />
           {children}

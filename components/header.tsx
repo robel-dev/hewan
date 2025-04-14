@@ -23,6 +23,8 @@ export default function Header() {
 
   // Check if the current page is the gallery page
   const isGalleryPage = currentRoute === '/gallery';
+  // Check if the current page is the home page
+  const isHomePage = currentRoute === '';
 
   const isActive = (path: string) => {
     // Use currentRoute for comparison, remove locale prefix
@@ -42,6 +44,9 @@ export default function Header() {
   const getLocalizedHref = (loc: string) => {
     return `/${loc}${currentRoute}`;
   };
+
+  // Condition to show the central logo
+  const showLogo = isScrolled || !isHomePage;
 
   return (
     <header
@@ -87,14 +92,18 @@ export default function Header() {
           </Link>
         </nav>
 
-        {/* Logo */}
-        <Link href={`/${locale}`} className={cn(
-          "font-display text-xl font-light tracking-[0.15em]",
-          // Apply black text if scrolled OR on gallery page
-          (isScrolled || isGalleryPage) ? "text-neutral-800" : "text-white"
-        )}>
-          HEWAN'S EVENT
-        </Link>
+        {/* Logo - Conditionally rendered */}
+        {showLogo && (
+          <Link href={`/${locale}`} className={cn(
+            "font-display text-xl font-light tracking-[0.15em]",
+            // Apply black text if scrolled OR on gallery page
+            (isScrolled || isGalleryPage) ? "text-neutral-800" : "text-white"
+          )}>
+            HEWAN'S EVENT
+          </Link>
+        )}
+        {/* Add a placeholder div when logo is hidden to maintain spacing (optional but recommended) */}
+        {!showLogo && <div className="w-[150px]"></div>} {/* Adjust width as needed */}
 
         {/* Desktop Nav Links (Right) */}
         <nav className="hidden items-center space-x-8 md:flex">
