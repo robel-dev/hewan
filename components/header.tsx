@@ -18,6 +18,8 @@ export default function Header() {
   const t = useTranslations();
   const locale = useLocale() as Locale;
   const pathname = usePathname();
+  const pathSegments = pathname.split('/');
+  const currentRoute = pathSegments.length > 2 ? `/${pathSegments.slice(2).join('/')}` : '';
 
   const isActive = (path: string) => {
     const currentPath = pathname.split('/')[2] || '';
@@ -32,6 +34,10 @@ export default function Header() {
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
+
+  const getLocalizedHref = (loc: string) => {
+    return `/${loc}${currentRoute}`;
+  };
 
   return (
     <header
@@ -115,10 +121,13 @@ export default function Header() {
             <DropdownMenuContent align="end" className="min-w-[100px] bg-white/95 backdrop-blur-sm">
               {i18nConfig.locales.map((loc) => (
                 <DropdownMenuItem key={loc}>
-                  <Link href={`/${loc}`} className={cn(
-                    "w-full font-display text-sm tracking-widest text-neutral-800 hover:bg-neutral-50 focus:bg-neutral-50",
-                    loc === "ti" ? "font-geez" : ""
-                  )}>
+                  <Link 
+                    href={getLocalizedHref(loc)} 
+                    className={cn(
+                      "w-full font-display text-sm tracking-widest text-neutral-800 hover:bg-neutral-50 focus:bg-neutral-50",
+                      loc === "ti" ? "font-geez" : ""
+                    )}
+                  >
                     {i18nConfig.localeNames[loc]}
                   </Link>
                 </DropdownMenuItem>
@@ -141,10 +150,13 @@ export default function Header() {
             <DropdownMenuContent align="end" className="min-w-[100px] bg-white/95 backdrop-blur-sm">
               {i18nConfig.locales.map((loc) => (
                 <DropdownMenuItem key={loc}>
-                  <Link href={`/${loc}`} className={cn(
-                    "w-full font-display text-sm tracking-widest text-neutral-800 hover:bg-neutral-50 focus:bg-neutral-50",
-                    loc === "ti" ? "font-geez" : ""
-                  )}>
+                  <Link 
+                    href={getLocalizedHref(loc)} 
+                    className={cn(
+                      "w-full font-display text-sm tracking-widest text-neutral-800 hover:bg-neutral-50 focus:bg-neutral-50",
+                      loc === "ti" ? "font-geez" : ""
+                    )}
+                  >
                     {i18nConfig.localeNames[loc]}
                   </Link>
                 </DropdownMenuItem>

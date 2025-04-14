@@ -142,7 +142,7 @@ export default function ContactForm() {
           variant="outline"
           className="border-neutral-300 bg-transparent px-8 text-xs tracking-widest text-neutral-800 hover:bg-neutral-50"
         >
-          {t('contact.submit')}
+          {t('contact.send')}
         </Button>
       </div>
     </form>

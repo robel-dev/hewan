@@ -3,66 +3,68 @@
     "home": "Hem",
     "services": "Tjänster",
     "gallery": "Galleri",
-    "contact": "Kontakt",
-    "blog": "Blogg"
+    "blog": "Blogg",
+    "contact": "Kontakt"
   },
   "hero": {
-    "title": "Fångar Dina Speciella Ögonblick",
-    "subtitle": "Professionella Foto- och Videografitjänster",
-    "cta": "Boka Nu"
+    "title": "HEWAN'S EVENT",
+    "subtitle": "SKAPAR OFÖRGLÖMLIGA STUNDER MED ELEGANS OCH PRECISION",
+    "cta": "Boka Ditt Event"
   },
   "services": {
     "title": "Våra Tjänster",
     "wedding": {
-      "title": "Bröllopsfotografering",
-      "description": "Fångar din speciella dag med elegans och stil"
-    },
-    "portrait": {
-      "title": "Porträttsessioner",
-      "description": "Professionella porträtt som berättar din historia"
+      "title": "Bröllopsplanering",
+      "description": "Fullständig bröllopsplanering skräddarsydd efter er unika vision."
     },
     "event": {
-      "title": "Evenemangsfotografering",
-      "description": "Omfattande dokumentation av dina speciella evenemang"
-    }
-  },
-  "testimonials": {
-    "title": "Vad Våra Kunder Säger",
-    "readMore": "Läs Mer",
-    "clients": {
-      "first": {
-        "name": "EMMA & JAMES",
-        "date": "12.06.2023",
-        "text": "Efter flera möten med olika koordinatorer valde vi Hewan's Event. De var professionella, uppmärksamma och förverkligade vår vision perfekt."
-      },
-      "second": {
-        "name": "SOPHIA & MICHAEL",
-        "date": "24.09.2023",
-        "text": "Hewans team tog hand om varje detalj. De var varma och omtänksamma med hög servicenivå och gav tips under hela planeringsprocessen."
-      },
-      "third": {
-        "name": "OLIVIA & WILLIAM",
-        "date": "03.05.2023",
-        "text": "Vi är otroligt tacksamma för uppmärksamheten på detaljer och den eleganta touchen som Hewan's Event gav vår bröllopsdag. Allt var perfekt."
-      }
+      "title": "Eventdekoration",
+      "description": "Kreativa och fantastiska dekorationer för alla tillfällen."
     }
   },
   "gallery": {
-    "title": "Vårt Galleri",
-    "viewMore": "Visa Mer"
+    "title": "Galleri",
+    "viewMore": "Se Hela Galleriet"
+  },
+  "testimonials": {
+    "title": "Fina Ord",
+    "clients": {
+      "first": {
+        "name": "Sandro & Selam",
+        "date": "Juli 2023",
+        "text": "Hewan gjorde vår bröllopsdag helt perfekt! Varje detalj var felfri."
+      },
+      "second": {
+        "name": "Klient B",
+        "date": "Maj 2023",
+        "text": "Professionell, kreativ och ett nöje att arbeta med. Rekommenderas varmt!"
+      },
+      "third": {
+        "name": "Klient C",
+        "date": "Mars 2023",
+        "text": "Överträffade våra förväntningar! Dekorationerna var fantastiska."
+      }
+    },
+    "readMore": "Läs Mer"
   },
   "contact": {
     "title": "Kontakta Oss",
     "name": "Namn",
     "email": "E-post",
+    "phone": "Telefonnummer",
+    "date": "Eventdatum",
+    "guests": "Antal Gäster",
     "message": "Meddelande",
-    "submit": "Skicka Meddelande"
+    "send": "Skicka Meddelande",
+    "sending": "Skickar...",
+    "success": "Tack! Ditt meddelande har skickats.",
+    "error": "Något gick fel. Försök igen."
   },
-  "blog": {
-    "title": "Vår Blogg",
-    "posts": {
-      "post": "Bröllopsberättelse {number}",
-      "excerpt": "Upplev magin och känslan i denna vackra ceremoni. Varje fångat ögonblick berättar en unik historia om kärlek, glädje och oförglömliga minnen."
-    }
+  "social": {
+    "title": "Följ Vår Resa",
+    "follow": "Följ på Instagram",
+    "instagramTab": "Instagram",
+    "profileCategory": "Festunderhållningstjänst\nEventplanerare.",
+    "profileDescription": "Vi anordnar alla typer av evenemang inklusive catering och dekoration"
   }
 } 

@@ -3,66 +3,68 @@
     "home": "Home",
     "services": "Services",
     "gallery": "Gallery",
-    "contact": "Contact",
-    "blog": "Blog"
+    "blog": "Blog",
+    "contact": "Contact"
   },
   "hero": {
-    "title": "Capturing Your Special Moments",
-    "subtitle": "Professional Photography & Videography Services",
-    "cta": "Book Now"
+    "title": "HEWAN'S EVENT",
+    "subtitle": "CRAFTING UNFORGETTABLE MOMENTS WITH ELEGANCE AND PRECISION",
+    "cta": "Book Your Event"
   },
   "services": {
     "title": "Our Services",
     "wedding": {
-      "title": "Wedding Photography",
-      "description": "Capturing your special day with elegance and style"
-    },
-    "portrait": {
-      "title": "Portrait Sessions",
-      "description": "Professional portraits that tell your story"
+      "title": "Wedding Planning",
+      "description": "Full-service wedding planning tailored to your unique vision."
     },
     "event": {
-      "title": "Event Coverage",
-      "description": "Comprehensive coverage of your special events"
-    }
-  },
-  "testimonials": {
-    "title": "What Our Clients Say",
-    "readMore": "Read More",
-    "clients": {
-      "first": {
-        "name": "EMMA & JAMES",
-        "date": "12.06.2023",
-        "text": "After several meetings with different coordinators, we decided on Hewan's Event. They were professional, attentive, and made our vision come to life perfectly."
-      },
-      "second": {
-        "name": "SOPHIA & MICHAEL",
-        "date": "24.09.2023",
-        "text": "Hewan's team took care of every detail. They were warm and caring with a high level of service, giving tips throughout the planning process."
-      },
-      "third": {
-        "name": "OLIVIA & WILLIAM",
-        "date": "03.05.2023",
-        "text": "We are incredibly grateful for the attention to detail and the elegant touch Hewan's Event brought to our wedding day. Everything was perfect."
-      }
+      "title": "Event Decoration",
+      "description": "Creative and stunning decorations for any occasion."
     }
   },
   "gallery": {
-    "title": "Our Gallery",
-    "viewMore": "View More"
+    "title": "Gallery",
+    "viewMore": "View Full Gallery"
+  },
+  "testimonials": {
+    "title": "Kind Words",
+    "clients": {
+      "first": {
+        "name": "Sandro & Selam",
+        "date": "July 2023",
+        "text": "Hewan made our wedding day absolutely perfect! Every detail was flawless."
+      },
+      "second": {
+        "name": "Client B",
+        "date": "May 2023",
+        "text": "Professional, creative, and a joy to work with. Highly recommended!"
+      },
+      "third": {
+        "name": "Client C",
+        "date": "March 2023",
+        "text": "Exceeded our expectations! The decorations were stunning."
+      }
+    },
+    "readMore": "Read More"
   },
   "contact": {
-    "title": "Get in Touch",
+    "title": "Get In Touch",
     "name": "Name",
     "email": "Email",
+    "phone": "Phone Number",
+    "date": "Event Date",
+    "guests": "Number of Guests",
     "message": "Message",
-    "submit": "Send Message"
+    "send": "Send Message",
+    "sending": "Sending...",
+    "success": "Thank you! Your message has been sent.",
+    "error": "Something went wrong. Please try again."
   },
-  "blog": {
-    "title": "Our Blog",
-    "posts": {
-      "post": "Wedding Story {number}",
-      "excerpt": "Experience the magic and emotion of this beautiful celebration. Every moment captured tells a unique story of love, joy, and unforgettable memories."
-    }
+  "social": {
+    "title": "Follow Our Journey",
+    "follow": "Follow on Instagram",
+    "instagramTab": "Instagram",
+    "profileCategory": "Party Entertainment Service\nEvent planners.",
+    "profileDescription": "We host all types of events which include catering and decoration"
   }
 } 
