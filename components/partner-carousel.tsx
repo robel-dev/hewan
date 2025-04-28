@@ -61,17 +61,10 @@ export default function LogoReel({
       <div
         ref={containerRef}
         className="relative w-full py-8"
-        onMouseEnter={() => pauseOnHover && setIsPaused(true)}
-        onMouseLeave={() => pauseOnHover && setIsPaused(false)}
       >
-        <div
-          className="flex"
-          style={{
-            animation: isPaused ? "none" : `scroll ${speed}s linear infinite`,
-          }}
-        >
-          {/* First set of logos */}
-          <div className="flex min-w-full items-center justify-around px-8">
+        <div className="flex">
+          {/* Fixed logos in a single row */}
+          <div className="flex min-w-full items-center justify-center gap-8 px-4">
             {logos.map((logo) => {
               const logoSrc = getValidImageSrc(
                 logo.src,
@@ -81,34 +74,7 @@ export default function LogoReel({
               return (
                 <div
                   key={logo.id}
-                  className="mx-12 flex min-w-[250px] items-center justify-center px-8 grayscale transition-all duration-300 hover:grayscale-0"
-                >
-                  <div className="relative h-20 w-full">
-                    <Image
-                      src={logoSrc || "/placeholder.svg"}
-                      alt={logo.alt}
-                      fill
-                      className="object-contain"
-                      sizes="(max-width: 768px) 100px, 150px"
-                    />
-                  </div>
-                </div>
-              )
-            })}
-          </div>
-
-          {/* Duplicate set of logos for seamless looping */}
-          <div className="flex min-w-full items-center justify-around px-8">
-            {logos.map((logo) => {
-              const logoSrc = getValidImageSrc(
-                logo.src,
-                `/placeholder.svg?height=60&width=150&query=${encodeURIComponent(logo.alt)}`
-              )
-              
-              return (
-                <div
-                  key={`dup-${logo.id}`}
-                  className="mx-12 flex min-w-[250px] items-center justify-center px-8 grayscale transition-all duration-300 hover:grayscale-0"
+                  className="flex min-w-[120px] max-w-[180px] items-center justify-center transition-all duration-300"
                 >
                   <div className="relative h-20 w-full">
                     <Image
@@ -125,46 +91,40 @@ export default function LogoReel({
           </div>
         </div>
       </div>
-
-      <style jsx global>{`
-        @keyframes scroll {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-100%);
-          }
-        }
-      `}</style>
     </div>
   )
 }
 
-// Update default logos with fewer items for better spacing
+// Update default logos with the company logos
 const defaultLogos = [
   {
     id: 1,
-    src: "/placeholder-logo.svg",
-    alt: "Elegant Events",
+    src: "/company-logos/brollops-guiden-removebg-preview.png",
+    alt: "Bröllops Guiden",
   },
   {
     id: 2,
-    src: "/placeholder-logo.svg",
-    alt: "Floral Fantasy",
+    src: "/company-logos/svea-logo-removebg-preview.png",
+    alt: "Svea",
   },
   {
     id: 3,
-    src: "/placeholder-logo.svg",
-    alt: "Wedding Magazine",
+    src: "/company-logos/sigtuna-kommun-preview.png",
+    alt: "Sigtuna Kommun",
   },
   {
     id: 4,
-    src: "/placeholder-logo.svg",
-    alt: "Luxury Venues",
+    src: "/company-logos/vardaga-removebg-preview.png",
+    alt: "Vardaga",
   },
   {
     id: 5,
-    src: "/placeholder-logo.svg",
-    alt: "Bridal Couture",
+    src: "/company-logos/red-cross-removebg-preview.png",
+    alt: "Red Cross",
+  },
+  {
+    id: 6,
+    src: "/company-logos/hallstahammars-kommun.png",
+    alt: "Hallstahammars Kommun",
   }
 ] 
