@@ -74,5 +74,14 @@
     "instagramTab": "ኢንስታግራም",
     "profileCategory": "ፓርቲ መዘናግዒ ኣገልግሎት\nEvent ውጥን ዝገብሩ።",
     "profileDescription": "ንኹሉ ዓይነት Events፡ መግቢ ምቕራብን ምምዕራፍን ሓዊሱ ነካይድ"
+  },
+  "weddingStats": {
+    "title": "ሓደ መርዓ ንምውዳብ ከባቢ 500 ሰዓታት ይወስድ...",
+    "days": "መዓልታት",
+    "weekends": "ሰንበታት",
+    "vacations": "ዕረፍትታት",
+    "daysCount": "63",
+    "weekendsCount": "7",
+    "vacationsCount": "1.5"
   }
 } 

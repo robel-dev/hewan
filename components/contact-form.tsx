@@ -1,8 +1,8 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
+import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -12,6 +12,7 @@ import { useTranslations } from 'next-intl'
 
 export default function ContactForm() {
   const t = useTranslations();
+  const router = useRouter();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -23,9 +24,10 @@ export default function ContactForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Form submission logic would go here
-    console.log(formData)
-    alert("Thank you for your inquiry. We will contact you shortly.")
+    // Store form data in localStorage to access it on the next page
+    localStorage.setItem('contactFormData', JSON.stringify(formData))
+    // Route to the messages-detail page
+    router.push('/messages-detail')
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

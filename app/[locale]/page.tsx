@@ -133,6 +133,7 @@ export default function Home() {
           {t('services.title')}
         </h2>
         <div className="grid gap-8 md:grid-cols-2">
+       
           <ServiceCard
             title={t('services.wedding.title')}
             description={t('services.wedding.description')}
@@ -145,6 +146,45 @@ export default function Home() {
             imageSrc="/refined-wedding-feast.png"
             href="/services/events"
           />
+          <ServiceCard
+            title={t('services.event.title')}
+            description={t('services.event.description')}
+            imageSrc="/refined-wedding-feast.png"
+            href="/services/events"
+          />
+          <ServiceCard
+            title={t('services.event.title')}
+            description={t('services.event.description')}
+            imageSrc="/refined-wedding-feast.png"
+            href="/services/events"
+          />
+        </div>
+      </section>
+
+      {/* Wedding Planning Stats Section */}
+      <section className="py-24 bg-[#1d1d1d] text-white">
+        <div className="mx-auto max-w-6xl px-8">
+        <div className="grid md:grid-cols-5 gap-12 items-center">
+  <div className="md:col-span-2 pl-6 flex items-center">
+    <h2 className="font-display text-lg font-light tracking-wide text-center md:text-left">
+      {t('weddingStats.title')}
+    </h2>
+  </div>
+  <div className="md:col-span-3 grid grid-cols-3 gap-14 items-center">
+    <div className="flex flex-col justify-center items-center">
+      <span className="text-3xl font-display mb-2 tracking-wide">{t('weddingStats.daysCount')}</span>
+      <span className="text-[9px] uppercase tracking-widest">{t('weddingStats.days')}</span>
+    </div>
+    <div className="flex flex-col justify-center items-center">
+      <span className="text-3xl font-display mb-2 tracking-wide">{t('weddingStats.weekendsCount')}</span>
+      <span className="text-[9px] uppercase tracking-widest">{t('weddingStats.weekends')}</span>
+    </div>
+    <div className="flex flex-col justify-center items-center">
+      <span className="text-3xl font-display mb-2 tracking-wide">{t('weddingStats.vacationsCount')}</span>
+      <span className="text-[9px] uppercase tracking-widest">{t('weddingStats.vacations')}</span>
+    </div>
+  </div>
+</div>
         </div>
       </section>
 

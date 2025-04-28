@@ -70,5 +70,14 @@
     "instagramTab": "Instagram",
     "profileCategory": "Party Entertainment Service\nEvent planners.",
     "profileDescription": "We host all types of events which include catering and decoration"
+  },
+  "weddingStats": {
+    "title": "IT TAKES ABOUT 500 HOURS TO PLAN A WEDDING...",
+    "days": "DAYS",
+    "weekends": "WEEKENDS",
+    "vacations": "VACATIONS",
+    "daysCount": "63",
+    "weekendsCount": "7",
+    "vacationsCount": "1.5"
   }
 } 

@@ -70,5 +70,14 @@
     "instagramTab": "Instagram",
     "profileCategory": "Festunderhållningstjänst\nEventplanerare.",
     "profileDescription": "Vi anordnar alla typer av evenemang inklusive catering och dekoration"
+  },
+  "weddingStats": {
+    "title": "DET TAR CIRKA 500 TIMMAR ATT PLANERA ETT BRÖLLOP...",
+    "days": "DAGAR",
+    "weekends": "HELGER",
+    "vacations": "SEMESTRAR",
+    "daysCount": "63",
+    "weekendsCount": "7",
+    "vacationsCount": "1,5"
   }
 } 
