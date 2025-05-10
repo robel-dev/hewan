@@ -9,7 +9,12 @@ import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { useTranslations } from 'next-intl'
+import { Loader2 } from "lucide-react"
 
+
+//robelamare20@gmail.com web app url
+const google_apps_script_web_api = 'https://script.google.com/macros/s/AKfycbyVJWJcDW0kTK_z2IxKvA4eoL9ULUocO8o6e_5f7a3o5izjjOzFW0z66MOaYLomHR3p1A/exec';
+const deployment_id = 'AKfycbxB1gJkjj8kYs_Erij9-pokgeNnYDb2SLG3Nq5Bndndv6bb0ew_gLisV7BKjLtwyPNy8g';
 export default function ContactForm() {
   const t = useTranslations();
   const router = useRouter();
@@ -21,13 +26,40 @@ export default function ContactForm() {
     date: "",
     message: "",
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [error, setError] = useState("")
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Store form data in localStorage to access it on the next page
-    localStorage.setItem('contactFormData', JSON.stringify(formData))
-    // Route to the messages-detail page
-    router.push('/messages-detail')
+    setIsSubmitting(true)
+    setError("")
+    
+    try {
+      // Log the data being sent
+      console.log('Sending form data:', formData);
+      
+      // Store form data in localStorage
+      localStorage.setItem('contactFormData', JSON.stringify(formData))
+      
+      // Send data to Google Apps Script
+      const response = await fetch(google_apps_script_web_api, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+        mode: 'no-cors'
+      })
+      
+      // Since we're using no-cors, we won't get a response to parse
+      // Just proceed to the next page
+      router.push('/messages-detail')
+    } catch (err) {
+      console.error('Error submitting form:', err)
+      setError("There was an error submitting your form. Please try again.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -138,13 +170,23 @@ export default function ContactForm() {
         />
       </div>
 
+      {error && <p className="text-red-500 text-xs text-center">{error}</p>}
+
       <div className="text-center">
         <Button
           type="submit"
           variant="outline"
           className="border-neutral-300 bg-transparent px-8 text-xs tracking-widest text-neutral-800 hover:bg-neutral-50"
+          disabled={isSubmitting}
         >
-          {t('contact.send')}
+          {isSubmitting ? (
+            <>
+              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+              {t('contact.submitting', { defaultValue: 'Submitting...' })}
+            </>
+          ) : (
+            t('contact.send', { defaultValue: 'Send Message' })
+          )}
         </Button>
       </div>
     </form>
