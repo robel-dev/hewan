@@ -9,7 +9,10 @@ import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { useTranslations } from 'next-intl'
-import { Loader2, ChevronRight } from "lucide-react"
+import { Loader2, ChevronRight, CalendarIcon } from "lucide-react"
+import { Calendar } from "@/components/ui/calendar"
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
+import { format } from "date-fns"
 
 
 //robelamare20@gmail.com web app url
@@ -101,6 +104,13 @@ export default function ContactForm() {
     setFormStep(1);
   };
 
+  const handleDateSelect = (date: Date | undefined) => {
+    if (date) {
+      const formattedDate = format(date, "yyyy-MM-dd")
+      setFormData(prev => ({ ...prev, date: formattedDate }))
+    }
+  }
+
   return (
     <form onSubmit={handleSubmit} className="relative">
       {formStep === 1 ? (
@@ -159,16 +169,19 @@ export default function ContactForm() {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="wedding" className="text-xs">
-                    Wedding
+                    Weddings
                   </SelectItem>
-                  <SelectItem value="engagement" className="text-xs">
-                    Engagement
+                  <SelectItem value="catering" className="text-xs">
+                    Catering
                   </SelectItem>
-                  <SelectItem value="corporate" className="text-xs">
-                    Corporate Event
+                  <SelectItem value="birthday" className="text-xs">
+                    Birthdays
                   </SelectItem>
-                  <SelectItem value="other" className="text-xs">
-                    Other
+                  <SelectItem value="memorial" className="text-xs">
+                    Memorials
+                  </SelectItem>
+                  <SelectItem value="baptism" className="text-xs">
+                    Baptism
                   </SelectItem>
                 </SelectContent>
               </Select>
@@ -179,14 +192,26 @@ export default function ContactForm() {
             <Label htmlFor="date" className="text-xs font-normal">
               Event Date
             </Label>
-            <Input
-              id="date"
-              name="date"
-              type="date"
-              value={formData.date}
-              onChange={handleChange}
-              className="border-neutral-200 text-xs focus-visible:ring-neutral-300"
-            />
+            <Popover>
+              <PopoverTrigger asChild>
+                <Button
+                  variant="outline"
+                  className="w-full justify-start text-left font-normal border-neutral-200 text-xs"
+                >
+                  <CalendarIcon className="mr-2 h-4 w-4" />
+                  {formData.date ? format(new Date(formData.date), "PPP") : "Select date"}
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent className="w-auto p-0" align="start">
+                <Calendar
+                  mode="single"
+                  selected={formData.date ? new Date(formData.date) : undefined}
+                  onSelect={handleDateSelect}
+                  initialFocus
+                  className="rounded-md border"
+                />
+              </PopoverContent>
+            </Popover>
           </div>
 
           <div className="space-y-2">
@@ -203,24 +228,28 @@ export default function ContactForm() {
             />
           </div>
 
-          <Button 
-            type="button" 
-            onClick={handleNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 rounded-full p-2"
-          >
-            <ChevronRight className="h-6 w-6" />
-          </Button>
+          <div className="flex justify-end mt-4">
+            <Button 
+              type="button" 
+              onClick={handleNext}
+              className="rounded-full w-10 h-10 bg-white shadow-md hover:bg-gray-50 flex items-center justify-center p-0 border border-gray-200"
+            >
+              <ChevronRight className="h-5 w-5 text-gray-600" />
+            </Button>
+          </div>
         </div>
       ) : (
         // Second form (additional details)
         <div className="space-y-6">
-          <Button 
-            type="button" 
-            onClick={handlePrev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 rounded-full p-2"
-          >
-            <ChevronRight className="h-6 w-6 rotate-180" />
-          </Button>
+          <div className="flex justify-start mb-4">
+            <Button 
+              type="button" 
+              onClick={handlePrev}
+              className="rounded-full w-10 h-10 bg-white shadow-md hover:bg-gray-50 flex items-center justify-center p-0 border border-gray-200"
+            >
+              <ChevronRight className="h-5 w-5 text-gray-600 rotate-180" />
+            </Button>
+          </div>
           
           <div className="grid gap-6 md:grid-cols-2">
             <div className="space-y-2">
@@ -266,44 +295,57 @@ export default function ContactForm() {
             <Label htmlFor="preferredContactMethod" className="text-xs font-normal">
               Preferred Contact Method
             </Label>
-            <Input
-              id="preferredContactMethod"
-              name="preferredContactMethod"
-              value={formData.preferredContactMethod}
-              onChange={handleChange}
-              className="border-neutral-200 text-xs focus-visible:ring-neutral-300"
-            />
+            <Select onValueChange={(value) => setFormData(prev => ({ ...prev, preferredContactMethod: value }))}>
+              <SelectTrigger className="border-neutral-200 text-xs focus-visible:ring-neutral-300">
+                <SelectValue placeholder="Select contact method" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="email" className="text-xs">
+                  Email
+                </SelectItem>
+                <SelectItem value="phone" className="text-xs">
+                  Phone
+                </SelectItem>
+              </SelectContent>
+            </Select>
           </div>
 
           <div className="space-y-2">
             <Label htmlFor="venue" className="text-xs font-normal">
               Venue
             </Label>
-            <Input
-              id="venue"
-              name="venue"
-              value={formData.venue}
-              onChange={handleChange}
-              className="border-neutral-200 text-xs focus-visible:ring-neutral-300"
-            />
+            <Select onValueChange={(value) => setFormData(prev => ({ ...prev, venue: value }))}>
+              <SelectTrigger className="border-neutral-200 text-xs focus-visible:ring-neutral-300">
+                <SelectValue placeholder="Select venue" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="Kista" className="text-xs">
+                  Kista
+                </SelectItem>
+                <SelectItem value="Skarholmen" className="text-xs">
+                  Skarholmen
+                </SelectItem>
+              </SelectContent>
+            </Select>
           </div>
 
           <div className="space-y-2">
             <Label htmlFor="additionalServices" className="text-xs font-normal">
               Additional Services
             </Label>
-            <Input
+            <Textarea
               id="additionalServices"
               name="additionalServices"
               value={formData.additionalServices}
               onChange={handleChange}
-              className="border-neutral-200 text-xs focus-visible:ring-neutral-300"
+              className="min-h-[100px] border-neutral-200 text-xs focus-visible:ring-neutral-300"
+              placeholder="Tell us about any additional services you need"
             />
           </div>
 
           <Button 
             type="submit" 
-            className="w-full"
+            className="w-full mt-6"
             disabled={isSubmitting}
           >
             {isSubmitting ? (
