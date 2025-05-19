@@ -94,13 +94,13 @@ export default function Header() {
 
         {/* Logo - Conditionally rendered */}
         {showLogo && (
-          <Link href={`/${locale}`} className={cn(
-            "font-display text-xl font-light tracking-[0.15em]",
+        <Link href={`/${locale}`} className={cn(
+          "font-display text-xl font-light tracking-[0.15em]",
             // Apply black text if scrolled OR on gallery page
             (isScrolled || isGalleryPage) ? "text-neutral-800" : "text-white"
-          )}>
-            HEWAN'S EVENT
-          </Link>
+        )}>
+          HEWAN'S EVENT
+        </Link>
         )}
         {/* Add a placeholder div when logo is hidden to maintain spacing (optional but recommended) */}
         {!showLogo && <div className="w-[150px]"></div>} {/* Adjust width as needed */}
@@ -120,7 +120,7 @@ export default function Header() {
           <Link
             href="#contact"
             className={cn(
-              "font-display text-sm tracking-widest hover:text-neutral-600",
+            "font-display text-sm tracking-widest hover:text-neutral-600",
                // Apply black text if scrolled OR on gallery page
               (isScrolled || isGalleryPage) ? "text-neutral-800" : "text-white"
             )}
@@ -145,8 +145,8 @@ export default function Header() {
                   <Link 
                     href={getLocalizedHref(loc)} 
                     className={cn(
-                      "w-full font-display text-sm tracking-widest text-neutral-800 hover:bg-neutral-50 focus:bg-neutral-50",
-                      loc === "ti" ? "font-geez" : ""
+                    "w-full font-display text-sm tracking-widest text-neutral-800 hover:bg-neutral-50 focus:bg-neutral-50",
+                    loc === "ti" ? "font-geez" : ""
                     )}
                   >
                     {i18nConfig.localeNames[loc]}
@@ -160,7 +160,7 @@ export default function Header() {
         {/* Mobile Menu Trigger */}
         <div className="flex items-center space-x-4 md:hidden">
           {/* Mobile Language Selector */}
-           <DropdownMenu>
+          <DropdownMenu>
             <DropdownMenuTrigger className={cn(
               "flex items-center space-x-1 font-display text-sm tracking-widest focus:outline-none uppercase",
               // Apply black text if scrolled OR on gallery page
@@ -176,8 +176,8 @@ export default function Header() {
                   <Link 
                     href={getLocalizedHref(loc)} 
                     className={cn(
-                      "w-full font-display text-sm tracking-widest text-neutral-800 hover:bg-neutral-50 focus:bg-neutral-50",
-                      loc === "ti" ? "font-geez" : ""
+                    "w-full font-display text-sm tracking-widest text-neutral-800 hover:bg-neutral-50 focus:bg-neutral-50",
+                    loc === "ti" ? "font-geez" : ""
                     )}
                   >
                     {i18nConfig.localeNames[loc]}
@@ -188,7 +188,7 @@ export default function Header() {
           </DropdownMenu>
 
           <button className="block" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu">
-            {isMenuOpen ?
+            {isMenuOpen ? 
               <X className={cn("h-6 w-6", (isScrolled || isGalleryPage) ? "text-neutral-800" : "text-white")} /> :
               <Menu className={cn("h-6 w-6", (isScrolled || isGalleryPage) ? "text-neutral-800" : "text-white")} />
             }
