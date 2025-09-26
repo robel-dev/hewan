@@ -130,29 +130,86 @@
   },
   "about": {
     "title": "About Us",
-    "subtitle": "We Create Memorable Moments",
-    "description": "Hewan's Event is a premier event planning and decoration service based in Stockholm. Since our founding, we have been dedicated to transforming ordinary occasions into extraordinary experiences. Our team combines creativity, precision, and cultural understanding to create events that truly reflect our clients' visions.",
-    "mission": "Our mission is to bring your dream events to life with meticulous attention to detail, cultural sensitivity, and creative excellence. We believe every celebration should be as unique as the people it honors.",
+    "hero": {
+      "subtitle": "Creating Unforgettable Moments with Elegance and Precision",
+      "cta": {
+        "team": "Meet Our Team",
+        "contact": "Get In Touch"
+      }
+    },
+    "story": {
+      "title": "Our Story",
+      "description1": "Hewan's Event was born from a passion for creating extraordinary celebrations that honor cultural traditions while embracing modern elegance. Founded in Stockholm, we have grown into one of the city's most trusted event planning and catering services.",
+      "description2": "Since our inception, we have specialized in transforming visions into reality, whether it's an intimate wedding ceremony, a grand corporate conference, or a heartfelt memorial service. Our multicultural approach allows us to serve diverse communities with authenticity and respect.",
+      "description3": "Every event we create tells a unique story, reflecting the personalities, traditions, and dreams of our clients. We believe that the most memorable moments are born from careful attention to detail and genuine understanding of what matters most to you."
+    },
+    "values": {
+      "title": "Our Values",
+      "subtitle": "The principles that guide everything we do",
+      "passion": {
+        "title": "Passion",
+        "description": "We pour our hearts into every event, treating each celebration as if it were our own special day."
+      },
+      "excellence": {
+        "title": "Excellence",
+        "description": "We maintain the highest standards in every aspect of our service, from planning to execution."
+      },
+      "collaboration": {
+        "title": "Collaboration",
+        "description": "We work closely with our clients, vendors, and venues to ensure seamless coordination."
+      },
+      "creativity": {
+        "title": "Creativity",
+        "description": "We bring fresh ideas and innovative solutions to make your event truly one-of-a-kind."
+      }
+    },
+    "achievements": {
+      "title": "Our Achievements",
+      "events": "Successful Events",
+      "years": "Years of Experience",
+      "satisfaction": "Client Satisfaction",
+      "venues": "Partner Venues"
+    },
     "team": {
       "title": "Meet Our Team",
+      "subtitle": "The passionate professionals behind every unforgettable event",
       "members": {
         "first": {
           "name": "Hewan Selam",
-          "role": "Founder & Creative Director"
+          "role": "Founder & Creative Director",
+          "description": "With over a decade of experience in event planning, Hewan brings artistic vision and cultural sensitivity to every celebration."
         },
         "second": {
           "name": "Aida Tekle",
-          "role": "Event Coordinator"
+          "role": "Event Coordinator",
+          "description": "Aida ensures every detail is perfectly executed, coordinating vendors and timelines with precision and grace."
         },
         "third": {
           "name": "Makeda Haile",
-          "role": "Decoration Specialist"
+          "role": "Decoration Specialist",
+          "description": "Makeda transforms spaces into breathtaking venues with her exceptional eye for design and color."
         },
         "fourth": {
           "name": "Samuel Tesfaye",
-          "role": "Logistics Manager"
+          "role": "Logistics Manager",
+          "description": "Samuel oversees all logistical aspects, ensuring smooth operations and timely delivery of services."
         }
       }
+    },
+    "mission": {
+      "title": "Our Mission",
+      "quote": "To create extraordinary moments that celebrate life's most precious occasions with cultural authenticity, creative excellence, and heartfelt attention to detail.",
+      "points": {
+        "quality": "Uncompromising Quality",
+        "care": "Personal Care & Attention",
+        "creativity": "Creative Innovation"
+      }
+    },
+    "cta": {
+      "title": "Ready to Create Something Beautiful?",
+      "description": "Let's bring your vision to life. Whether you're planning an intimate gathering or a grand celebration, we're here to make it extraordinary.",
+      "services": "Explore Our Services",
+      "contact": "Start Planning"
     }
   }
 } 

@@ -130,29 +130,86 @@
   },
   "about": {
     "title": "Om Oss",
-    "subtitle": "Vi Skapar Minnesvärda Ögonblick",
-    "description": "Hewan's Event är en ledande eventplanering och dekorationstjänst baserad i Stockholm. Sedan vårt grundande har vi varit dedikerade till att förvandla vanliga tillfällen till extraordinära upplevelser. Vårt team kombinerar kreativitet, precision och kulturell förståelse för att skapa evenemang som verkligen speglar våra kunders visioner.",
-    "mission": "Vår mission är att förverkliga dina drömevenemang med noggrann uppmärksamhet på detaljer, kulturell känslighet och kreativ excellens. Vi tror att varje firande bör vara lika unikt som människorna det hedrar.",
+    "hero": {
+      "subtitle": "Skapar Oförglömliga Ögonblick med Elegans och Precision",
+      "cta": {
+        "team": "Möt Vårt Team",
+        "contact": "Kontakta Oss"
+      }
+    },
+    "story": {
+      "title": "Vår Historia",
+      "description1": "Hewan's Event föddes ur en passion för att skapa extraordinära firanden som hedrar kulturella traditioner samtidigt som de omfamnar modern elegans. Grundat i Stockholm har vi vuxit till en av stadens mest betrodda eventplanerings- och cateringtjänster.",
+      "description2": "Sedan vårt grundande har vi specialiserat oss på att förvandla visioner till verklighet, oavsett om det är en intim bröllopsceremon, en storslagen företagskonferens eller en känslosam minnesstund. Vår mångkulturella approach låter oss tjäna olika gemenskaper med autenticitet och respekt.",
+      "description3": "Varje evenemang vi skapar berättar en unik historia som speglar våra kunders personligheter, traditioner och drömmar. Vi tror att de mest minnesvärda ögonblicken föds ur noggrann uppmärksamhet på detaljer och genuin förståelse för vad som betyder mest för dig."
+    },
+    "values": {
+      "title": "Våra Värderingar",
+      "subtitle": "Principerna som styr allt vi gör",
+      "passion": {
+        "title": "Passion",
+        "description": "Vi lägger våra hjärtan i varje evenemang och behandlar varje firande som om det vore vår egen speciella dag."
+      },
+      "excellence": {
+        "title": "Excellens",
+        "description": "Vi upprätthåller de högsta standarderna i alla aspekter av vår tjänst, från planering till genomförande."
+      },
+      "collaboration": {
+        "title": "Samarbete",
+        "description": "Vi arbetar nära våra kunder, leverantörer och lokaler för att säkerställa smidig koordination."
+      },
+      "creativity": {
+        "title": "Kreativitet",
+        "description": "Vi tillför nya idéer och innovativa lösningar för att göra ditt evenemang verkligen unikt."
+      }
+    },
+    "achievements": {
+      "title": "Våra Prestationer",
+      "events": "Framgångsrika Evenemang",
+      "years": "Års Erfarenhet",
+      "satisfaction": "Kundnöjdhet",
+      "venues": "Partnerlokaler"
+    },
     "team": {
       "title": "Möt Vårt Team",
+      "subtitle": "De passionerade proffsen bakom varje oförglömligt evenemang",
       "members": {
         "first": {
           "name": "Hewan Selam",
-          "role": "Grundare & Kreativ Direktör"
+          "role": "Grundare & Kreativ Direktör",
+          "description": "Med över ett decennium av erfarenhet inom eventplanering tillför Hewan konstnärlig vision och kulturell känslighet till varje firande."
         },
         "second": {
           "name": "Aida Tekle",
-          "role": "Eventkoordinator"
+          "role": "Eventkoordinator",
+          "description": "Aida säkerställer att varje detalj utförs perfekt och koordinerar leverantörer och tidsscheman med precision och grace."
         },
         "third": {
           "name": "Makeda Haile",
-          "role": "Dekorationsspecialist"
+          "role": "Dekorationsspecialist",
+          "description": "Makeda förvandlar utrymmen till hisnande lokaler med sitt exceptionella öga för design och färg."
         },
         "fourth": {
           "name": "Samuel Tesfaye",
-          "role": "Logistikchef"
+          "role": "Logistikchef",
+          "description": "Samuel övervakar alla logistiska aspekter och säkerställer smidig drift och punktlig leverans av tjänster."
         }
       }
+    },
+    "mission": {
+      "title": "Vårt Uppdrag",
+      "quote": "Att skapa extraordinära ögonblick som firar livets mest värdefulla tillfällen med kulturell autenticitet, kreativ excellens och hjärtlig uppmärksamhet på detaljer.",
+      "points": {
+        "quality": "Kompromisslös Kvalitet",
+        "care": "Personlig Omsorg & Uppmärksamhet",
+        "creativity": "Kreativ Innovation"
+      }
+    },
+    "cta": {
+      "title": "Redo att Skapa Något Vackert?",
+      "description": "Låt oss förverkliga din vision. Oavsett om du planerar en intim sammankomst eller ett storslaget firande, vi är här för att göra det extraordinärt.",
+      "services": "Utforska Våra Tjänster",
+      "contact": "Börja Planera"
     }
   }
 } 

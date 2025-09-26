@@ -26,6 +26,8 @@ export default function Header() {
   const isGalleryPage = currentRoute === '/gallery';
   // Check if the current page is the home page
   const isHomePage = currentRoute === '';
+  // Check if the current page is the about page
+  const isAboutPage = currentRoute === '/about';
 
   const isActive = (path: string) => {
     // Use currentRoute for comparison, remove locale prefix
@@ -47,14 +49,14 @@ export default function Header() {
   };
 
   // Condition to show the central logo
-  const showLogo = isScrolled || !isHomePage;
+  const showLogo = true; // Always show the logo
 
   return (
     <header
       className={cn(
         "fixed left-0 right-0 top-0 z-50 transition-all duration-300",
-        // Always apply scrolled background on gallery page
-        (isScrolled || isGalleryPage) ? "bg-white/70 shadow-sm backdrop-blur-sm" : "bg-transparent",
+        // Always apply scrolled background on gallery page or about page
+        (isScrolled || isGalleryPage || isAboutPage) ? "bg-white/70 shadow-sm backdrop-blur-sm" : "bg-transparent",
       )}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 md:px-6">
@@ -64,8 +66,8 @@ export default function Header() {
             href={`/${locale}`}
             className={cn(
               "font-display text-sm tracking-widest hover:text-neutral-600 relative",
-              // Apply black text if scrolled OR on gallery page
-              (isScrolled || isGalleryPage) ? "text-neutral-800" : "text-white",
+              // Apply black text if scrolled OR on gallery page OR on about page
+              (isScrolled || isGalleryPage || isAboutPage) ? "text-neutral-800" : "text-white",
               isActive(`/${locale}`) && "after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-full after:h-[2px] after:bg-current"
             )}
           >
@@ -79,7 +81,7 @@ export default function Header() {
                 <NavigationMenuTrigger 
                   className={cn(
                     "font-display text-sm tracking-widest hover:text-neutral-600 relative bg-transparent border-none p-0 h-auto focus:bg-transparent hover:bg-transparent data-[state=open]:bg-transparent data-[active]:bg-transparent",
-                    (isScrolled || isGalleryPage) ? "text-neutral-800" : "text-white",
+                    (isScrolled || isGalleryPage || isAboutPage) ? "text-neutral-800" : "text-white",
                     isActive(`/${locale}/services`) && "after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-full after:h-[2px] after:bg-current"
                   )}
                 >
@@ -170,7 +172,7 @@ export default function Header() {
             href={`/${locale}/gallery`}
             className={cn(
               "font-display text-sm tracking-widest hover:text-neutral-600 relative",
-              (isScrolled || isGalleryPage) ? "text-neutral-800" : "text-white",
+              (isScrolled || isGalleryPage || isAboutPage) ? "text-neutral-800" : "text-white",
               isActive(`/${locale}/gallery`) && "after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-full after:h-[2px] after:bg-current"
             )}
           >
@@ -180,7 +182,7 @@ export default function Header() {
             href={`/${locale}/about`}
             className={cn(
               "font-display text-sm tracking-widest hover:text-neutral-600 relative",
-              (isScrolled || isGalleryPage) ? "text-neutral-800" : "text-white",
+              (isScrolled || isGalleryPage || isAboutPage) ? "text-neutral-800" : "text-white",
               isActive(`/${locale}/about`) && "after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-full after:h-[2px] after:bg-current"
             )}
           >
@@ -188,18 +190,6 @@ export default function Header() {
           </Link>
         </nav>
 
-        {/* Logo - Conditionally rendered */}
-        {showLogo && (
-        <Link href={`/${locale}`} className={cn(
-          "font-display text-xl font-light tracking-[0.15em]",
-            // Apply black text if scrolled OR on gallery page
-            (isScrolled || isGalleryPage) ? "text-neutral-800" : "text-white"
-        )}>
-          HEWAN'S EVENT
-        </Link>
-        )}
-        {/* Add a placeholder div when logo is hidden to maintain spacing (optional but recommended) */}
-        {!showLogo && <div className="w-[150px]"></div>} {/* Adjust width as needed */}
 
         {/* Desktop Nav Links (Right) */}
         <nav className="hidden items-center space-x-8 md:flex">
@@ -207,8 +197,8 @@ export default function Header() {
             href="#contact"
             className={cn(
             "font-display text-sm tracking-widest hover:text-neutral-600",
-               // Apply black text if scrolled OR on gallery page
-              (isScrolled || isGalleryPage) ? "text-neutral-800" : "text-white"
+               // Apply black text if scrolled OR on gallery page OR on about page
+              (isScrolled || isGalleryPage || isAboutPage) ? "text-neutral-800" : "text-white"
             )}
           >
             {t('navigation.contact')}
@@ -218,8 +208,8 @@ export default function Header() {
           <DropdownMenu>
             <DropdownMenuTrigger className={cn(
               "flex items-center space-x-1 font-display text-sm tracking-widest focus:outline-none uppercase",
-               // Apply black text if scrolled OR on gallery page
-              (isScrolled || isGalleryPage) ? "text-neutral-800 hover:text-neutral-600" : "text-white hover:text-white/80"
+               // Apply black text if scrolled OR on gallery page OR on about page
+              (isScrolled || isGalleryPage || isAboutPage) ? "text-neutral-800 hover:text-neutral-600" : "text-white hover:text-white/80"
             )}>
               <span className={cn("font-light", locale === "ti" ? "font-geez" : "")}>
                 {i18nConfig.localeNames[locale]}
@@ -249,8 +239,8 @@ export default function Header() {
           <DropdownMenu>
             <DropdownMenuTrigger className={cn(
               "flex items-center space-x-1 font-display text-sm tracking-widest focus:outline-none uppercase",
-              // Apply black text if scrolled OR on gallery page
-              (isScrolled || isGalleryPage) ? "text-neutral-800 hover:text-neutral-600" : "text-white hover:text-white/80"
+              // Apply black text if scrolled OR on gallery page OR on about page
+              (isScrolled || isGalleryPage || isAboutPage) ? "text-neutral-800 hover:text-neutral-600" : "text-white hover:text-white/80"
             )}>
               <span className={cn("font-light", locale === "ti" ? "font-geez" : "")}>
                 {i18nConfig.localeNames[locale]}
@@ -275,8 +265,8 @@ export default function Header() {
 
           <button className="block" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu">
             {isMenuOpen ? 
-              <X className={cn("h-6 w-6", (isScrolled || isGalleryPage) ? "text-neutral-800" : "text-white")} /> :
-              <Menu className={cn("h-6 w-6", (isScrolled || isGalleryPage) ? "text-neutral-800" : "text-white")} />
+              <X className={cn("h-6 w-6", (isScrolled || isGalleryPage || isAboutPage) ? "text-neutral-800" : "text-white")} /> :
+              <Menu className={cn("h-6 w-6", (isScrolled || isGalleryPage || isAboutPage) ? "text-neutral-800" : "text-white")} />
             }
           </button>
         </div>

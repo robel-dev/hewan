@@ -91,44 +91,52 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-[#faf9f8]">
-      {/* Hero Section with Video */}
+      {/* Hero Section with Glassmorphism */}
       <section className="relative h-screen w-full overflow-hidden">
-        {/* Video Background */}
-        <div className="absolute inset-0 bg-black">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="h-full w-full object-cover"
-            poster="/hewan-photos/hewans-event-6.png" // Fallback image while video loads
-            onLoadedData={() => setVideoLoaded(true)}
-          >
-            <source src="/videos/hewan-video.mp4" type="video/mp4" />
-            {/* Your browser does not support the video tag. */}
-          </video>
+        {/* Background Image with Blur */}
+        <div className="absolute inset-0">
+            <Image
+              src="/images/home-2.jpg"
+              alt="Hewan's Event Hero Background"
+              fill
+            className="object-cover scale-100 blur-sm"
+            priority
+          />
         </div>
         
-        {/* Overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/30" />
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/30 to-black/40" />
         
-        {/* Hero content (title, subtitle, button) */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white">
-          <h1 className="font-display text-4xl font-light tracking-[0.2em] md:text-5xl lg:text-6xl">
-            {t('hero.title')}
-          </h1>
-          <p className="mt-6 max-w-md font-sans text-xs font-light tracking-[0.25em] md:text-sm">
-            {t('hero.subtitle')}
-          </p>
-          <div className="mt-10">
-            <Link href="#contact">
-              <Button
-                variant="outline"
-                className="border-white bg-transparent px-8 py-6 text-xs tracking-[0.15em] text-white hover:bg-white/10"
-              >
-                {t('hero.cta')}
-              </Button>
-            </Link>
+        {/* Content Container without glassmorphism */}
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
+          <div className="max-w-4xl mx-4">
+            {/* Logo */}
+            <div className="mb-8 flex justify-center">
+              <Image
+                src="/images/hewan-logo-gold.png"
+                alt="Hewan's Event Logo"
+                width={350}
+                height={350}
+                className="object-contain"
+              />
+            </div>
+            
+            <h1 className="font-display text-4xl font-light tracking-[0.2em] md:text-5xl lg:text-6xl text-white mb-6">
+              {t('hero.title')}
+            </h1>
+            <p className="max-w-2xl mx-auto font-sans text-sm font-light tracking-[0.25em] md:text-base text-white/90 mb-10 leading-relaxed">
+              {t('hero.subtitle')}
+            </p>
+            <div>
+              <Link href="#contact">
+                <Button
+                  variant="outline"
+                  className="border-white/30 bg-white/10 backdrop-blur-sm px-8 py-6 text-sm tracking-[0.15em] text-white hover:bg-white/20 hover:border-white/50 transition-all duration-300 rounded-full"
+                >
+                  {t('hero.cta')}
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
