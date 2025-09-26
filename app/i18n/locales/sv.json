@@ -3,23 +3,71 @@
     "home": "Hem",
     "services": "Tjänster",
     "gallery": "Galleri",
-    "blog": "Blogg",
+    "about": "Om Oss",
     "contact": "Kontakt"
   },
   "hero": {
     "title": "HEWAN'S EVENT",
-    "subtitle": "SKAPAR OFÖRGLÖMLIGA STUNDER MED ELEGANS OCH PRECISION",
+    "subtitle": "DIN VISION. DIN STIL. DIN DAG",
     "cta": "Boka Ditt Event"
   },
   "services": {
     "title": "Våra Tjänster",
-    "wedding": {
-      "title": "Bröllopsplanering",
-      "description": "Fullständig bröllopsplanering skräddarsydd efter er unika vision."
+    "hero": {
+      "title": "EXCEPTIONELLA EVENTTJÄNSTER I STOCKHOLM",
+      "subtitle": "Vi erbjuder ett brett utbud av tjänster för alla typer av evenemang. Vi specialiserar oss på att skapa minnesvärda fester, bröllop, konferenser, minnesstunder, middagar och evenemang. Oavsett vilken typ av evenemang du planerar kommer vi att anpassa varje detalj efter dina specifika behov för att göra din vistelse hos oss verkligt unik.",
+      "cta": "Begär Offert"
     },
-    "event": {
-      "title": "Eventdekoration",
-      "description": "Kreativa och fantastiska dekorationer för alla tillfällen."
+    "wedding": {
+      "title": "Bröllop & Vigslar",
+      "description": "Fullständig bröllopsplanering och koordination för att göra er speciella dag perfekt och oförglömlig."
+    },
+    "festivities": {
+      "title": "Festivaler & Evenemang",
+      "description": "Professionell eventplanering för firanden, fester och speciella tillfällen med uppmärksamhet på varje detalj."
+    },
+    "conference": {
+      "title": "Konferenser & Möten",
+      "description": "Företagseventplanering inklusive konferenser, möten och affärssammankomster med professionell service."
+    },
+    "memorials": {
+      "title": "Minnesstunder & Begravningar",
+      "description": "Medkännande och värdiga minnestjänster och begravningsarrangemang med kulturell känslighet."
+    },
+    "catering": {
+      "title": "Cateringtjänster",
+      "description": "Utsökta kulinariska upplevelser med anpassade menyer, professionell service och vacker presentation."
+    },
+    "christmas": {
+      "title": "Julfester",
+      "description": "Festliga helgfiranden och julfester med traditionella och moderna inslag."
+    },
+    "exhibitions": {
+      "title": "Miniutställningar & Mässor",
+      "description": "Småskaliga utställningar, handelsmässor och showcaseevenemang med professionell uppsättning och hantering."
+    },
+    "wellness": {
+      "title": "Välbefinnandeevenemang",
+      "description": "Mindfulness, wellness och hälsofokuserade evenemang som främjar välbefinnande och avkoppling."
+    },
+    "summer": {
+      "title": "Sommarfester",
+      "description": "Utomhussommarfiranden, trädgårdsfester och säsongsevenemang med livlig atmosfär."
+    },
+    "ceremonies": {
+      "title": "Ceremonier & Mottagningar",
+      "description": "Formella ceremonier, prisutdelningar och eleganta mottagningar med protokoll och tradition."
+    },
+    "venues": {
+      "title": "Lokaluthyrning",
+      "description": "Vackra lokalutrymmen att hyra med fullservice alternativ och flexibla arrangemang."
+    },
+    "learnMore": "Läs Mer",
+    "cta": {
+      "title": "Hittar du inte exakt det du söker?",
+      "subtitle": "Oroa dig inte! Kontakta oss ändå så skräddarsyr vi en lösning som passar dina behov. Varje evenemang hos oss är unikt och vi ser fram emot att hjälpa dig skapa oförglömliga minnen i Stockholm.",
+      "contact": "Kontakta Oss Idag",
+      "viewWork": "Se Vårt Arbete"
     }
   },
   "gallery": {
@@ -79,5 +127,32 @@
     "daysCount": "63",
     "weekendsCount": "7",
     "vacationsCount": "1,5"
+  },
+  "about": {
+    "title": "Om Oss",
+    "subtitle": "Vi Skapar Minnesvärda Ögonblick",
+    "description": "Hewan's Event är en ledande eventplanering och dekorationstjänst baserad i Stockholm. Sedan vårt grundande har vi varit dedikerade till att förvandla vanliga tillfällen till extraordinära upplevelser. Vårt team kombinerar kreativitet, precision och kulturell förståelse för att skapa evenemang som verkligen speglar våra kunders visioner.",
+    "mission": "Vår mission är att förverkliga dina drömevenemang med noggrann uppmärksamhet på detaljer, kulturell känslighet och kreativ excellens. Vi tror att varje firande bör vara lika unikt som människorna det hedrar.",
+    "team": {
+      "title": "Möt Vårt Team",
+      "members": {
+        "first": {
+          "name": "Hewan Selam",
+          "role": "Grundare & Kreativ Direktör"
+        },
+        "second": {
+          "name": "Aida Tekle",
+          "role": "Eventkoordinator"
+        },
+        "third": {
+          "name": "Makeda Haile",
+          "role": "Dekorationsspecialist"
+        },
+        "fourth": {
+          "name": "Samuel Tesfaye",
+          "role": "Logistikchef"
+        }
+      }
+    }
   }
 } 

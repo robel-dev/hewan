@@ -24,54 +24,63 @@ import LogoReel from "@/components/partner-carousel"
 
 type Locale = 'en' | 'sv' | 'ti';
 
-// Sample Instagram posts data (Update with Hewan's Event details)
+// Instagram posts data - REAL VIDEOS FROM @hewans_events (6 videos for 2x3 grid)
+// Update the likes, comments, and Instagram URLs with actual data
 const instagramPosts = [
   {
     id: 1,
-    type: 'image',
-    image: "/hewan-photos/hewan-photo-10.jpg",
-    caption: "Elegant celebrations by Hewan's Event",
-    likes: "150",
-    comments: "12",
-    url: "https://www.instagram.com/p/YOUR_POST_ID_HERE/"
+    type: 'reel',
+    video: "/videos/hewans-ig/hewan-ig-1.mp4",
+    caption: "✨ Hewan's Events x Skärholmens Gård ✨",
+    likes: "180",
+    comments: "18",
+    url: "https://www.instagram.com/reel/YOUR_REEL_ID_HERE/"
   },
   {
     id: 2,
     type: 'reel',
-    image: "/hewan-photos/hewan-photo-11.jpg",
-    caption: "Behind the scenes Reel!",
-    likes: "550",
-    comments: "45",
+    video: "/videos/hewans-ig/hewan-ig-2.mp4",
+    caption: "Hewan's package list",
+    likes: "800",
+    comments: "60",
     url: "https://www.instagram.com/reel/YOUR_REEL_ID_HERE/"
   },
   {
     id: 3,
-    type: 'image',
-    image: "/hewan-photos/hewans-event-3.jpg",
-    caption: "Making memories special",
-    likes: "180",
-    comments: "18",
-    url: "https://www.instagram.com/p/CthdbkbIDeD/"
+    type: 'reel',
+    video: "/videos/hewans-ig/hewan-ig-3.mp4",
+    caption: "We capture the most beautiful moments",
+    likes: "150",
+    comments: "12",
+    url: "https://www.instagram.com/reel/YOUR_REEL_ID_HERE/"
   },
   {
     id: 4,
-    type: 'image',
-    image: "/hewan-photos/hewans-event-2.jpg",
-    caption: "Quick event transformation",
-    likes: "800",
-    comments: "60",
-    url: "https://www.instagram.com/p/CthdbkbIDeD/"
+    type: 'reel',
+    video: "/videos/hewans-ig/hewan-ig-4.mp4",
+    caption: "Behind the scenes magic",
+    likes: "320",
+    comments: "28",
+    url: "https://www.instagram.com/reel/YOUR_REEL_ID_HERE/"
   },
   {
     id: 5,
-    type: 'image',
-    image: "/hewan-photos/hewan-jebena.jpg",
-    caption: "Traditional touches",
-    likes: "300",
-    comments: "45",
-    url: "https://www.instagram.com/p/CthdbkbIDeD/"
+    type: 'reel',
+    video: "/videos/hewans-ig/hewan-ig-5.mp4",
+    caption: "Event planning perfection",
+    likes: "275",
+    comments: "22",
+    url: "https://www.instagram.com/reel/YOUR_REEL_ID_HERE/"
   },
-  // Add more posts and reels
+  {
+    id: 6,
+    type: 'reel',
+    video: "/videos/hewans-ig/hewan-ig-6.mp4",
+    caption: "Beautiful slow dance",
+    likes: "550",
+    comments: "45",
+    url: "https://www.instagram.com/reel/YOUR_REEL_ID_HERE/"
+  }
 ];
 
 export default function Home() {
@@ -153,11 +162,11 @@ export default function Home() {
             href="/services/events"
           />
           <ServiceCard
-            title={t('services.event.title')}
-            description={t('services.event.description')}
-            imageSrc="/refined-wedding-feast.png"
-            href="/services/events"
-          />
+          title="Catering"
+          description="Delicious food and beverage service for all types of events and celebrations."
+          imageSrc="/catering-hewan.jpg"
+          href="/services/catering"
+        />
         </div>
       </section>
 
@@ -219,59 +228,104 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Social Media Feed Section - Simplified without Tabs */}
-      <section className="bg-[#f8f6f4] py-16 md:py-24">
+      {/* Follow Our Journey - Instagram Feed Section */}
+      <section className="bg-white py-16 md:py-24">
         <div className="mx-auto max-w-6xl px-4">
+          {/* Section Title */}
           <h2 className="mb-12 text-center font-display text-2xl font-light tracking-[0.15em] md:text-3xl">
             {t('social.title')}
           </h2>
 
-          {/* Display Instagram Profile Info Directly */}
-          <div className="mb-8 flex flex-col items-center gap-4 text-center sm:flex-row sm:justify-between sm:text-left">
-            <div className="flex items-center gap-3">
-              <Avatar className="h-12 w-12 border-2 border-neutral-200">
-                <AvatarImage src="/hewan-photos/hewan-logo.jpg" alt="@hewans_events" className="object-cover scale-120" />
-                <AvatarFallback>HE</AvatarFallback>
-              </Avatar>
-              <Link href="https://www.instagram.com/hewans_events/" target="_blank" rel="noopener noreferrer" className="hover:text-neutral-700">
-                <h3 className="font-display tracking-wider font-medium">@hewans_events</h3>
-                <p className="text-sm text-neutral-500 font-sans whitespace-pre-line">{t('social.profileCategory')}</p>
-                <p className="text-sm text-neutral-500 font-sans">{t('social.profileDescription')}</p>
-              </Link>
+          {/* Instagram Profile Header */}
+          <div className="mb-12 flex flex-col items-center gap-6">
+            <div className="flex items-center gap-4">
+              <div className="relative">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-500 p-0.5">
+                  <Avatar className="w-full h-full border-3 border-white">
+                    <AvatarImage src="/hewan-photos/hewan-logo.jpg" alt="@hewans_events" className="object-cover" />
+                    <AvatarFallback>HE</AvatarFallback>
+                  </Avatar>
+                </div>
+              </div>
+              <div className="text-center">
+                <Link 
+                  href="https://www.instagram.com/hewans_events/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-neutral-700 transition-colors"
+                >
+                  <h3 className="font-display text-xl font-medium tracking-wide mb-1 hover:underline">@hewans_events</h3>
+                </Link>
+                <p className="text-sm text-neutral-600 font-sans">{t('social.profileCategory')}</p>
+              </div>
             </div>
-             {/* Optional: Add Follower counts etc. if desired */}
+            
+            {/* Stats Row */}
+            <div className="flex justify-center gap-8">
+              <div className="text-center">
+                <div className="font-display text-lg font-medium">164</div>
+                <div className="text-xs text-neutral-500 uppercase tracking-wide">Posts</div>
+              </div>
+              <div className="text-center">
+                <div className="font-display text-lg font-medium">2.8K</div>
+                <div className="text-xs text-neutral-500 uppercase tracking-wide">Followers</div>
+              </div>
+              <div className="text-center">
+                <div className="font-display text-lg font-medium">544</div>
+                <div className="text-xs text-neutral-500 uppercase tracking-wide">Following</div>
+              </div>
+            </div>
           </div>
 
-          {/* Display Instagram Grid Directly */}
-          <div className="grid grid-cols-2 gap-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+          {/* Instagram Posts Grid - No Borders */}
+          <div className="grid grid-cols-3 gap-1 mb-12">
             {instagramPosts.map((post) => (
               <Link
                 key={post.id}
                 href={post.url || '#'}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="instagram-post group relative h-96 overflow-hidden block"
+                className="group relative aspect-square overflow-hidden bg-neutral-100"
               >
-                <Image
-                  src={post.image || "/placeholder.svg"}
-                  alt={post.caption}
-                  fill
-                  className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
+                {/* Video Element */}
+                <video
+                  src={post.video}
+                  className="w-full h-full object-cover transition-all duration-300 ease-out group-hover:scale-105"
+                  muted
+                  loop
+                  playsInline
+                  autoPlay
+                  preload="metadata"
+                  onMouseEnter={(e) => {
+                    e.currentTarget.currentTime = 0;
+                    e.currentTarget.play().catch(() => {});
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.play().catch(() => {});
+                  }}
+                  onLoadedMetadata={(e) => {
+                    e.currentTarget.play().catch(() => {});
+                  }}
+                  onError={(e) => {
+                    console.log('Video load error:', post.video);
+                  }}
                 />
-                {post.type === 'reel' && (
-                  <div className="absolute top-2 right-2 z-10">
-                    <Play size={20} className="text-white drop-shadow-md" fill="white"/>
-                  </div>
-                )}
-                <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-0 transition-all duration-300 group-hover:bg-opacity-40">
-                  <div className="flex translate-y-4 gap-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                
+                {/* Play Icon Overlay */}
+                <div className="absolute top-2 right-2 z-10">
+                  <Play size={12} className="text-white drop-shadow-lg" fill="white"/>
+                </div>
+                
+                {/* Hover Overlay with Stats */}
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-200 flex items-center justify-center">
+                  <div className="flex gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                     <div className="flex items-center gap-1 text-white">
-                      <Heart size={18} fill="white" />
-                      <span className="font-sans text-xs">{post.likes}</span>
+                      <Heart size={14} fill="white" />
+                      <span className="text-sm font-bold">{post.likes}</span>
                     </div>
                     <div className="flex items-center gap-1 text-white">
-                      <MessageCircle size={18} fill="white" />
-                      <span className="font-sans text-xs">{post.comments}</span>
+                      <MessageCircle size={14} fill="white" />
+                      <span className="text-sm font-bold">{post.comments}</span>
                     </div>
                   </div>
                 </div>
@@ -279,14 +333,19 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Display Follow Button Directly */}
-          <div className="mt-8 text-center">
-             <Button asChild variant="outline" className="border-neutral-300 bg-transparent text-xs tracking-widest text-neutral-800 hover:bg-neutral-50 font-display">
-              <Link href="https://www.instagram.com/hewans_events/" target="_blank" rel="noopener noreferrer">
+          {/* Follow Button and Call to Action */}
+          <div className="text-center space-y-4">
+            <Button asChild className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-medium px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105">
+              <Link href="https://www.instagram.com/hewans_events/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
+                <Instagram size={18} />
                 {t('social.follow')}
               </Link>
-             </Button>
-           </div>
+            </Button>
+            
+            <p className="text-neutral-600 font-sans text-sm">
+              Get a behind-the-scenes look at our beautiful events
+            </p>
+          </div>
         </div>
       </section>
 
@@ -300,18 +359,21 @@ export default function Home() {
             <TestimonialCard
               name={t('testimonials.clients.first.name')}
               date={t('testimonials.clients.first.date')}
+              video="/videos/hewan-testimony/testimony-1.mp4"
               image="/hewan-photos/sandro-selam.jpg"
               testimonial={t('testimonials.clients.first.text')}
             />
             <TestimonialCard
               name={t('testimonials.clients.second.name')}
               date={t('testimonials.clients.second.date')}
+              video="/videos/hewan-testimony/testimony-4.mp4"
               image="/hewan-photos/sandro-selam.jpg"
               testimonial={t('testimonials.clients.second.text')}
             />
             <TestimonialCard
               name={t('testimonials.clients.third.name')}
               date={t('testimonials.clients.third.date')}
+              video="/videos/hewan-testimony/testinomy-3.mp4"
               image="/hewan-photos/sandro-selam.jpg"
               testimonial={t('testimonials.clients.third.text')}
             />

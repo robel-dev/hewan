@@ -5,6 +5,7 @@ import Link from "next/link"
 import { Menu, X } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu"
 import { useTranslations } from 'next-intl'
 import { useLocale } from 'next-intl'
 import { i18nConfig } from '@/app/i18n/config'
@@ -70,16 +71,101 @@ export default function Header() {
           >
             {t('navigation.home')}
           </Link>
-          <Link
-            href={`/${locale}/services`}
-            className={cn(
-              "font-display text-sm tracking-widest hover:text-neutral-600 relative",
-              (isScrolled || isGalleryPage) ? "text-neutral-800" : "text-white",
-              isActive(`/${locale}/services`) && "after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-full after:h-[2px] after:bg-current"
-            )}
-          >
-            {t('navigation.services')}
-          </Link>
+          
+          {/* Services Dropdown */}
+          <NavigationMenu>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger 
+                  className={cn(
+                    "font-display text-sm tracking-widest hover:text-neutral-600 relative bg-transparent border-none p-0 h-auto focus:bg-transparent hover:bg-transparent data-[state=open]:bg-transparent data-[active]:bg-transparent",
+                    (isScrolled || isGalleryPage) ? "text-neutral-800" : "text-white",
+                    isActive(`/${locale}/services`) && "after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-full after:h-[2px] after:bg-current"
+                  )}
+                >
+                  {t('navigation.services')}
+                </NavigationMenuTrigger>
+                <NavigationMenuContent className="bg-white/95 backdrop-blur-sm border-neutral-200">
+                  <div className="grid w-64 gap-1 p-3">
+                    <Link
+                      href={`/${locale}/services#weddings`}
+                      className="block p-3 text-sm font-display tracking-wide text-neutral-800 hover:bg-neutral-50 rounded transition-colors"
+                    >
+                      {t('services.wedding.title')}
+                    </Link>
+                    <Link
+                      href={`/${locale}/services#festivities`}
+                      className="block p-3 text-sm font-display tracking-wide text-neutral-800 hover:bg-neutral-50 rounded transition-colors"
+                    >
+                      {t('services.festivities.title')}
+                    </Link>
+                    <Link
+                      href={`/${locale}/services#conference`}
+                      className="block p-3 text-sm font-display tracking-wide text-neutral-800 hover:bg-neutral-50 rounded transition-colors"
+                    >
+                      {t('services.conference.title')}
+                    </Link>
+                    <Link
+                      href={`/${locale}/services#memorials`}
+                      className="block p-3 text-sm font-display tracking-wide text-neutral-800 hover:bg-neutral-50 rounded transition-colors"
+                    >
+                      {t('services.memorials.title')}
+                    </Link>
+                    <Link
+                      href={`/${locale}/services#catering`}
+                      className="block p-3 text-sm font-display tracking-wide text-neutral-800 hover:bg-neutral-50 rounded transition-colors"
+                    >
+                      {t('services.catering.title')}
+                    </Link>
+                    <Link
+                      href={`/${locale}/services#christmas`}
+                      className="block p-3 text-sm font-display tracking-wide text-neutral-800 hover:bg-neutral-50 rounded transition-colors"
+                    >
+                      {t('services.christmas.title')}
+                    </Link>
+                    <Link
+                      href={`/${locale}/services#exhibitions`}
+                      className="block p-3 text-sm font-display tracking-wide text-neutral-800 hover:bg-neutral-50 rounded transition-colors"
+                    >
+                      {t('services.exhibitions.title')}
+                    </Link>
+                    <Link
+                      href={`/${locale}/services#wellness`}
+                      className="block p-3 text-sm font-display tracking-wide text-neutral-800 hover:bg-neutral-50 rounded transition-colors"
+                    >
+                      {t('services.wellness.title')}
+                    </Link>
+                    <Link
+                      href={`/${locale}/services#summer`}
+                      className="block p-3 text-sm font-display tracking-wide text-neutral-800 hover:bg-neutral-50 rounded transition-colors"
+                    >
+                      {t('services.summer.title')}
+                    </Link>
+                    <Link
+                      href={`/${locale}/services#ceremonies`}
+                      className="block p-3 text-sm font-display tracking-wide text-neutral-800 hover:bg-neutral-50 rounded transition-colors"
+                    >
+                      {t('services.ceremonies.title')}
+                    </Link>
+                    <Link
+                      href={`/${locale}/services#venues`}
+                      className="block p-3 text-sm font-display tracking-wide text-neutral-800 hover:bg-neutral-50 rounded transition-colors"
+                    >
+                      {t('services.venues.title')}
+                    </Link>
+                    <div className="border-t border-neutral-200 my-2"></div>
+                    <Link
+                      href={`/${locale}/services`}
+                      className="block p-3 text-sm font-display tracking-wide text-neutral-900 hover:bg-neutral-50 rounded transition-colors font-medium"
+                    >
+                      View All Services →
+                    </Link>
+                  </div>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+          
           <Link
             href={`/${locale}/gallery`}
             className={cn(
@@ -89,6 +175,16 @@ export default function Header() {
             )}
           >
             {t('navigation.gallery')}
+          </Link>
+          <Link
+            href={`/${locale}/about`}
+            className={cn(
+              "font-display text-sm tracking-widest hover:text-neutral-600 relative",
+              (isScrolled || isGalleryPage) ? "text-neutral-800" : "text-white",
+              isActive(`/${locale}/about`) && "after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-full after:h-[2px] after:bg-current"
+            )}
+          >
+            {t('navigation.about')}
           </Link>
         </nav>
 
@@ -107,16 +203,6 @@ export default function Header() {
 
         {/* Desktop Nav Links (Right) */}
         <nav className="hidden items-center space-x-8 md:flex">
-          <Link
-            href={`/${locale}/blog`}
-            className={cn(
-              "font-display text-sm tracking-widest hover:text-neutral-600 relative",
-              (isScrolled || isGalleryPage) ? "text-neutral-800" : "text-white",
-              isActive(`/${locale}/blog`) && "after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-full after:h-[2px] after:bg-current"
-            )}
-          >
-            {t('navigation.blog')}
-          </Link>
           <Link
             href="#contact"
             className={cn(
@@ -230,15 +316,15 @@ export default function Header() {
             >
               {t('navigation.gallery')}
             </Link>
-            <Link 
-              href={`/${locale}/blog`}
+            <Link
+              href={`/${locale}/about`}
               className={cn(
                 "font-display text-base tracking-widest text-neutral-800 relative",
-                isActive(`/${locale}/blog`) && "after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-full after:h-[2px] after:bg-current"
+                isActive(`/${locale}/about`) && "after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-full after:h-[2px] after:bg-current"
               )}
               onClick={() => setIsMenuOpen(false)}
             >
-              {t('navigation.blog')}
+              {t('navigation.about')}
             </Link>
             <Link
               href="#contact"

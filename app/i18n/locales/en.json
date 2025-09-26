@@ -3,23 +3,71 @@
     "home": "Home",
     "services": "Services",
     "gallery": "Gallery",
-    "blog": "Blog",
+    "about": "About Us",
     "contact": "Contact"
   },
   "hero": {
     "title": "HEWAN'S EVENT",
-    "subtitle": "CRAFTING UNFORGETTABLE MOMENTS WITH ELEGANCE AND PRECISION",
+    "subtitle": "YOUR VISION. YOUR STYLE. YOUR DAY",
     "cta": "Book Your Event"
   },
   "services": {
     "title": "Our Services",
-    "wedding": {
-      "title": "Wedding Planning",
-      "description": "Full-service wedding planning tailored to your unique vision."
+    "hero": {
+      "title": "EXCEPTIONAL EVENT SERVICES IN STOCKHOLM",
+      "subtitle": "We offer a wide range of services for all types of events. We specialize in creating memorable parties, weddings, conferences, memorials, dinners and events. No matter what type of event you are planning, we will customize every detail to your specific needs to make your stay with us truly unique.",
+      "cta": "Request a Quote"
     },
-    "event": {
-      "title": "Event Decoration",
-      "description": "Creative and stunning decorations for any occasion."
+    "wedding": {
+      "title": "Marriage & Weddings",
+      "description": "Complete wedding planning and coordination services to make your special day perfect and unforgettable."
+    },
+    "festivities": {
+      "title": "Festivities & Events",
+      "description": "Professional event planning for celebrations, parties, and special occasions with attention to every detail."
+    },
+    "conference": {
+      "title": "Conferences & Meetings",
+      "description": "Corporate event planning including conferences, meetings, and business gatherings with professional service."
+    },
+    "memorials": {
+      "title": "Memorials & Funerals",
+      "description": "Compassionate and dignified memorial services and funeral arrangements with cultural sensitivity."
+    },
+    "catering": {
+      "title": "Catering Services",
+      "description": "Exquisite culinary experiences with custom menus, professional service, and beautiful presentation."
+    },
+    "christmas": {
+      "title": "Christmas Parties",
+      "description": "Festive holiday celebrations and Christmas parties with traditional and modern touches."
+    },
+    "exhibitions": {
+      "title": "Mini Fairs & Exhibitions",
+      "description": "Small-scale exhibitions, trade fairs, and showcase events with professional setup and management."
+    },
+    "wellness": {
+      "title": "Wellness Events",
+      "description": "Mindfulness, wellness, and health-focused events promoting well-being and relaxation."
+    },
+    "summer": {
+      "title": "Summer Parties",
+      "description": "Outdoor summer celebrations, garden parties, and seasonal events with vibrant atmosphere."
+    },
+    "ceremonies": {
+      "title": "Ceremonies & Receptions",
+      "description": "Formal ceremonies, award events, and elegant receptions with protocol and tradition."
+    },
+    "venues": {
+      "title": "Venue Rental",
+      "description": "Beautiful venue spaces for rent with full service options and flexible arrangements."
+    },
+    "learnMore": "Learn More",
+    "cta": {
+      "title": "Can't find exactly what you're looking for?",
+      "subtitle": "Don't worry! Contact us anyway, and we'll tailor a solution to suit your needs. Every event with us is unique, and we look forward to helping you create unforgettable memories in Stockholm.",
+      "contact": "Contact Us Today",
+      "viewWork": "View Our Work"
     }
   },
   "gallery": {
@@ -79,5 +127,32 @@
     "daysCount": "63",
     "weekendsCount": "7",
     "vacationsCount": "1.5"
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "We Create Memorable Moments",
+    "description": "Hewan's Event is a premier event planning and decoration service based in Stockholm. Since our founding, we have been dedicated to transforming ordinary occasions into extraordinary experiences. Our team combines creativity, precision, and cultural understanding to create events that truly reflect our clients' visions.",
+    "mission": "Our mission is to bring your dream events to life with meticulous attention to detail, cultural sensitivity, and creative excellence. We believe every celebration should be as unique as the people it honors.",
+    "team": {
+      "title": "Meet Our Team",
+      "members": {
+        "first": {
+          "name": "Hewan Selam",
+          "role": "Founder & Creative Director"
+        },
+        "second": {
+          "name": "Aida Tekle",
+          "role": "Event Coordinator"
+        },
+        "third": {
+          "name": "Makeda Haile",
+          "role": "Decoration Specialist"
+        },
+        "fourth": {
+          "name": "Samuel Tesfaye",
+          "role": "Logistics Manager"
+        }
+      }
+    }
   }
 } 
