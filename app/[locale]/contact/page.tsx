@@ -15,11 +15,11 @@ export default function ContactPage() {
     message: "",
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setBasicData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleNext = (e) => {
+  const handleNext = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     localStorage.setItem("contactBasicData", JSON.stringify(basicData));
     router.push("/messages-detail");
