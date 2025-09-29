@@ -88,6 +88,11 @@ export default function Home() {
   const locale = useLocale() as Locale;
   // Add state to handle video loading if needed
   const [videoLoaded, setVideoLoaded] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <main className="min-h-screen bg-[#faf9f8]">
@@ -296,28 +301,35 @@ export default function Home() {
                 className="group relative aspect-square overflow-hidden bg-neutral-100"
               >
                 {/* Video Element */}
-                <video
-                  src={post.video}
-                  className="w-full h-full object-cover transition-all duration-300 ease-out group-hover:scale-105"
-                  muted
-                  loop
-                  playsInline
-                  autoPlay
-                  preload="metadata"
-                  onMouseEnter={(e) => {
-                    e.currentTarget.currentTime = 0;
-                    e.currentTarget.play().catch(() => {});
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.play().catch(() => {});
-                  }}
-                  onLoadedMetadata={(e) => {
-                    e.currentTarget.play().catch(() => {});
-                  }}
-                  onError={(e) => {
-                    console.log('Video load error:', post.video);
-                  }}
-                />
+                {mounted && (
+                  <video
+                    src={post.video}
+                    className="w-full h-full object-cover transition-all duration-300 ease-out group-hover:scale-105"
+                    muted
+                    loop
+                    playsInline
+                    autoPlay
+                    preload="metadata"
+                    onMouseEnter={(e) => {
+                      e.currentTarget.currentTime = 0;
+                      e.currentTarget.play().catch(() => {});
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.play().catch(() => {});
+                    }}
+                    onLoadedMetadata={(e) => {
+                      e.currentTarget.play().catch(() => {});
+                    }}
+                    onError={(e) => {
+                      console.log('Video load error:', post.video);
+                    }}
+                  />
+                )}
+                {!mounted && (
+                  <div className="w-full h-full bg-neutral-200 flex items-center justify-center">
+                    <div className="text-neutral-400">Loading...</div>
+                  </div>
+                )}
                 
                 {/* Play Icon Overlay */}
                 <div className="absolute top-2 right-2 z-10">
@@ -419,7 +431,7 @@ export default function Home() {
               </Link>
             </nav>
             <Separator className="w-24" />
-            <p className="text-xs text-neutral-400">© {new Date().getFullYear()} Hewan's Event. All rights reserved.</p>
+            <p className="text-xs text-neutral-400">© {mounted ? new Date().getFullYear() : '2024'} Hewan's Event. All rights reserved.</p>
           </div>
         </div>
       </footer>
