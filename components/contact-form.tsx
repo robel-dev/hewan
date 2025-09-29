@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -21,6 +21,7 @@ const deployment_id = 'AKfycbxB1gJkjj8kYs_Erij9-pokgeNnYDb2SLG3Nq5Bndndv6bb0ew_g
 export default function ContactForm() {
   const t = useTranslations();
   const router = useRouter();
+  const [mounted, setMounted] = useState(false);
   const [formStep, setFormStep] = useState(1);
   const [formData, setFormData] = useState({
     name: "",
@@ -39,6 +40,10 @@ export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState("")
 
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
@@ -49,7 +54,9 @@ export default function ContactForm() {
       console.log('Sending complete form data:', formData);
       
       // Store form data in localStorage
-      localStorage.setItem('contactFormData', JSON.stringify(formData))
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('contactFormData', JSON.stringify(formData))
+      }
       
       // Send data to Google Apps Script
       const response = await fetch(google_apps_script_web_api, {

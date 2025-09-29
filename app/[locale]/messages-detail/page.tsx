@@ -26,6 +26,7 @@ interface FormData {
 
 export default function MessagesDetail() {
   const t = useTranslations();
+  const [mounted, setMounted] = useState(false);
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
@@ -42,13 +43,16 @@ export default function MessagesDetail() {
   })
 
   useEffect(() => {
+    setMounted(true);
     // Retrieve the stored form data when the component mounts
-    const storedData = localStorage.getItem('contactFormData')
-    if (storedData) {
-      setFormData(prev => ({
-        ...prev,
-        ...JSON.parse(storedData)
-      }))
+    if (typeof window !== 'undefined') {
+      const storedData = localStorage.getItem('contactFormData')
+      if (storedData) {
+        setFormData(prev => ({
+          ...prev,
+          ...JSON.parse(storedData)
+        }))
+      }
     }
   }, [])
 

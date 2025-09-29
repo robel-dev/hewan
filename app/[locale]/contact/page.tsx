@@ -1,13 +1,14 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
 export default function ContactPage() {
   const router = useRouter();
+  const [mounted, setMounted] = useState(false);
   const [basicData, setBasicData] = useState({
     name: "",
     email: "",
@@ -15,13 +16,19 @@ export default function ContactPage() {
     message: "",
   });
 
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setBasicData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   const handleNext = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    localStorage.setItem("contactBasicData", JSON.stringify(basicData));
+    if (typeof window !== 'undefined') {
+      localStorage.setItem("contactBasicData", JSON.stringify(basicData));
+    }
     router.push("/messages-detail");
   };
 
