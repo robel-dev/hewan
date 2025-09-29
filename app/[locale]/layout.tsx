@@ -24,22 +24,12 @@ const montserrat = Montserrat({
   variable: "--font-montserrat",
 })
 
-// Import Noto Sans Ethiopic for Tigrinya (Geez script)
-const geezFont = localFont({
-  src: [
-    {
-      path: "../../public/fonts/NotoSansEthiopic-Regular.ttf",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/NotoSansEthiopic-Bold.ttf",
-      weight: "700",
-      style: "normal",
-    },
-  ],
+// Import Noto Sans Ethiopic for Tigrinya (Geez script) - temporarily disabled for build
+// TODO: Re-enable after fixing font loading issues
+const geezFont = {
   variable: "--font-geez",
-})
+  className: "",
+}
 
 export function generateStaticParams() {
   return i18nConfig.locales.map((locale) => ({ locale }))
@@ -78,7 +68,7 @@ export default async function LocaleLayout({
       <head>
         <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;700&display=swap" rel="stylesheet" />
       </head>
-      <body className="font-lora antialiased">
+      <body className="font-lora antialiased" suppressHydrationWarning>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Header />
           {children}
