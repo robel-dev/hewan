@@ -31,13 +31,13 @@ export default function ServicesPage() {
     {
       title: t('services.conference.title'),
       description: t('services.conference.description'),
-      imageSrc: "/refined-garden-wedding.png",
+      imageSrc: "/images/conference-hewan.png",
       href: "#conference"
     },
     {
       title: t('services.memorials.title'),
       description: t('services.memorials.description'),
-      imageSrc: "/timeless-elegance.png",
+      imageSrc: "/images/hewan-memorial.png",
       href: "#memorials"
     },
     {
@@ -58,16 +58,16 @@ export default function ServicesPage() {
       imageSrc: "/hewan-photos/hewans-event-3.jpg",
       href: "#exhibitions"
     },
-    {
-      title: t('services.wellness.title'),
-      description: t('services.wellness.description'),
-      imageSrc: "/hewan-photos/hewans-event-2.jpg",
-      href: "#wellness"
-    },
+    // {
+    //   title: t('services.wellness.title'),
+    //   description: t('services.wellness.description'),
+    //   imageSrc: "/hewan-photos/hewans-event-2.jpg",
+    //   href: "#wellness"
+    // },
     {
       title: t('services.summer.title'),
       description: t('services.summer.description'),
-      imageSrc: "/hewan-photos/hewans-event-6.png",
+      imageSrc: "/images/hewan-summer-party-.jpg",
       href: "#summer"
     },
     {
@@ -79,7 +79,7 @@ export default function ServicesPage() {
     {
       title: t('services.venues.title'),
       description: t('services.venues.description'),
-      imageSrc: "/hewan-photos/hewan-photo-11.jpg",
+      imageSrc: "/images/hewan-venue.jpg",
       href: "#venues"
     }
   ]
@@ -91,7 +91,7 @@ export default function ServicesPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/team-banner.jpg"
+            src="/team/hewan-team.jpg"
             alt="Hewan's Event Services"
             fill
             className="object-cover"

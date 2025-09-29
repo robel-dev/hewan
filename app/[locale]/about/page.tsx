@@ -148,7 +148,7 @@ export default function AboutPage() {
                   <div className="space-y-4">
                     <div className="aspect-[3/4] relative rounded-2xl overflow-hidden shadow-lg">
                       <Image
-                        src="/refined-garden-wedding.png"
+                        src="/team/hewan-team-2.jpg"
                         alt="Our Work"
                         fill
                         className="object-cover"
@@ -156,7 +156,7 @@ export default function AboutPage() {
                     </div>
                     <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-lg">
                       <Image
-                        src="/refined-wedding-feast.png"
+                        src="/team/hewan-team-5.jpeg"
                         alt="Our Events"
                         fill
                         className="object-cover"
@@ -166,7 +166,7 @@ export default function AboutPage() {
                   <div className="space-y-4 pt-8">
                     <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-lg">
                       <Image
-                        src="/refined-wedding-moment.png"
+                        src="/team/hewan-team-12.jpeg"
                         alt="Our Service"
                         fill
                         className="object-cover"
@@ -174,7 +174,7 @@ export default function AboutPage() {
                     </div>
                     <div className="aspect-[3/4] relative rounded-2xl overflow-hidden shadow-lg">
                       <Image
-                        src="/timeless-elegance.png"
+                        src="/team/hewan-team-14.jpeg"
                         alt="Our Style"
                         fill
                         className="object-cover"

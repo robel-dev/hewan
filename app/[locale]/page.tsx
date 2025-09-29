@@ -155,25 +155,25 @@ export default function Home() {
             title={t('services.wedding.title')}
             description={t('services.wedding.description')}
             imageSrc="/refined-garden-wedding.png"
-            href="/services/weddings"
+            href="/services#weddings"
           />
           <ServiceCard
-            title={t('services.event.title')}
-            description={t('services.event.description')}
+            title={t('services.catering.title')}
+            description={t('services.catering.description')}
+            imageSrc="/catering-hewan.jpg"
+            href="/services#catering"
+          />
+          <ServiceCard
+            title={t('services.venues.title')}
+            description={t('services.venues.description')}
             imageSrc="/refined-wedding-feast.png"
-            href="/services/events"
+            href="/services#venues"
           />
           <ServiceCard
-            title={t('services.event.title')}
-            description={t('services.event.description')}
-            imageSrc="/refined-wedding-feast.png"
-            href="/services/events"
-          />
-          <ServiceCard
-          title="Catering"
-          description="Delicious food and beverage service for all types of events and celebrations."
-          imageSrc="/catering-hewan.jpg"
-          href="/services/catering"
+          title={t('services.summer.title')}
+          description={t('services.summer.description')}
+          imageSrc="/images/hewan-summer-party-.jpg"
+          href="/services#summer"
         />
         </div>
       </section>
