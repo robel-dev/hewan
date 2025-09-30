@@ -126,9 +126,9 @@ export default function Home() {
               />
             </div>
             
-            <h1 className="font-display text-4xl font-light tracking-[0.2em] md:text-5xl lg:text-6xl text-white mb-6">
+            {/* <h1 className="font-display text-4xl font-light tracking-[0.2em] md:text-5xl lg:text-6xl text-white mb-6">
               {t('hero.title')}
-            </h1>
+            </h1> */}
             <p className="max-w-2xl mx-auto font-sans text-sm font-light tracking-[0.25em] md:text-base text-white/90 mb-10 leading-relaxed">
               {t('hero.subtitle')}
             </p>
@@ -158,28 +158,28 @@ export default function Home() {
        
           <ServiceCard
             title={t('services.wedding.title')}
-            description={t('services.wedding.description')}
+            description=""
             imageSrc="/refined-garden-wedding.png"
             href="/services#weddings"
           />
           <ServiceCard
             title={t('services.catering.title')}
-            description={t('services.catering.description')}
+            description=""
             imageSrc="/catering-hewan.jpg"
             href="/services#catering"
           />
           <ServiceCard
-            title={t('services.venues.title')}
-            description={t('services.venues.description')}
+            title={t('services.graduation.title')}
+            description=""
             imageSrc="/refined-wedding-feast.png"
-            href="/services#venues"
+            href="/services#graduation"
           />
           <ServiceCard
-          title={t('services.summer.title')}
-          description={t('services.summer.description')}
-          imageSrc="/images/hewan-summer-party-.jpg"
-          href="/services#summer"
-        />
+            title={t('services.baptism.title')}
+            description=""
+            imageSrc="/images/hewan-summer-party-.jpg"
+            href="/services#baptism"
+          />
         </div>
       </section>
 

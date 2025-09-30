@@ -19,16 +19,12 @@
       "cta": "Request a Quote"
     },
     "wedding": {
-      "title": "Marriage & Weddings",
+      "title": "Weddings and Ceremonies",
       "description": "Complete wedding planning and coordination services to make your special day perfect and unforgettable."
     },
     "festivities": {
-      "title": "Festivities & Events",
-      "description": "Professional event planning for celebrations, parties, and special occasions with attention to every detail."
-    },
-    "conference": {
-      "title": "Conferences & Meetings",
-      "description": "Corporate event planning including conferences, meetings, and business gatherings with professional service."
+      "title": "Venue Rental for Festivities & Events",
+      "description": "Beautiful venue spaces with professional event planning for celebrations, parties, and special occasions with attention to every detail."
     },
     "memorials": {
       "title": "Memorials & Funerals",
@@ -38,29 +34,21 @@
       "title": "Catering Services",
       "description": "Exquisite culinary experiences with custom menus, professional service, and beautiful presentation."
     },
-    "christmas": {
-      "title": "Christmas Parties",
-      "description": "Festive holiday celebrations and Christmas parties with traditional and modern touches."
+    "birthdays": {
+      "title": "Birthday Parties",
+      "description": "Memorable birthday celebrations with custom themes, decorations, and entertainment for all ages."
     },
-    "exhibitions": {
-      "title": "Mini Fairs & Exhibitions",
-      "description": "Small-scale exhibitions, trade fairs, and showcase events with professional setup and management."
+    "graduation": {
+      "title": "High School Graduation (Studenten)",
+      "description": "Celebrate this milestone achievement with elegant graduation parties and ceremonies honoring academic success."
     },
-    "wellness": {
-      "title": "Wellness Events",
-      "description": "Mindfulness, wellness, and health-focused events promoting well-being and relaxation."
+    "anniversaries": {
+      "title": "Wedding Anniversaries",
+      "description": "Romantic and memorable anniversary celebrations to honor your love story and special milestones."
     },
-    "summer": {
-      "title": "Summer Parties",
-      "description": "Outdoor summer celebrations, garden parties, and seasonal events with vibrant atmosphere."
-    },
-    "ceremonies": {
-      "title": "Ceremonies & Receptions",
-      "description": "Formal ceremonies, award events, and elegant receptions with protocol and tradition."
-    },
-    "venues": {
-      "title": "Venue Rental",
-      "description": "Beautiful venue spaces for rent with full service options and flexible arrangements."
+    "baptism": {
+      "title": "Baptism Services",
+      "description": "Sacred baptism ceremonies with beautiful decorations and meaningful celebrations for this important spiritual milestone."
     },
     "learnMore": "Learn More",
     "cta": {

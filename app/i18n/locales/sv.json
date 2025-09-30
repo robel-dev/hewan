@@ -19,16 +19,12 @@
       "cta": "Begär Offert"
     },
     "wedding": {
-      "title": "Bröllop & Vigslar",
+      "title": "Bröllop och Ceremonier",
       "description": "Fullständig bröllopsplanering och koordination för att göra er speciella dag perfekt och oförglömlig."
     },
     "festivities": {
-      "title": "Festivaler & Evenemang",
-      "description": "Professionell eventplanering för firanden, fester och speciella tillfällen med uppmärksamhet på varje detalj."
-    },
-    "conference": {
-      "title": "Konferenser & Möten",
-      "description": "Företagseventplanering inklusive konferenser, möten och affärssammankomster med professionell service."
+      "title": "Lokaluthyrning för Festivaler & Evenemang",
+      "description": "Vackra lokalutrymmen med professionell eventplanering för firanden, fester och speciella tillfällen med uppmärksamhet på varje detalj."
     },
     "memorials": {
       "title": "Minnesstunder & Begravningar",
@@ -38,29 +34,21 @@
       "title": "Cateringtjänster",
       "description": "Utsökta kulinariska upplevelser med anpassade menyer, professionell service och vacker presentation."
     },
-    "christmas": {
-      "title": "Julfester",
-      "description": "Festliga helgfiranden och julfester med traditionella och moderna inslag."
+    "birthdays": {
+      "title": "Födelsedagsfester",
+      "description": "Minnesvärda födelsedagsfiranden med anpassade teman, dekorationer och underhållning för alla åldrar."
     },
-    "exhibitions": {
-      "title": "Miniutställningar & Mässor",
-      "description": "Småskaliga utställningar, handelsmässor och showcaseevenemang med professionell uppsättning och hantering."
+    "graduation": {
+      "title": "Gymnasieexamen (Studenten)",
+      "description": "Fira denna milstolpe med eleganta studentfester och ceremonier som hedrar akademisk framgång."
     },
-    "wellness": {
-      "title": "Välbefinnandeevenemang",
-      "description": "Mindfulness, wellness och hälsofokuserade evenemang som främjar välbefinnande och avkoppling."
+    "anniversaries": {
+      "title": "Bröllopsårsdagar",
+      "description": "Romantiska och minnesvärda årsdagsfiranden för att hedra er kärlekshistoria och speciella milstolpar."
     },
-    "summer": {
-      "title": "Sommarfester",
-      "description": "Utomhussommarfiranden, trädgårdsfester och säsongsevenemang med livlig atmosfär."
-    },
-    "ceremonies": {
-      "title": "Ceremonier & Mottagningar",
-      "description": "Formella ceremonier, prisutdelningar och eleganta mottagningar med protokoll och tradition."
-    },
-    "venues": {
-      "title": "Lokaluthyrning",
-      "description": "Vackra lokalutrymmen att hyra med fullservice alternativ och flexibla arrangemang."
+    "baptism": {
+      "title": "Doptjänster",
+      "description": "Heliga dopceremoner med vackra dekorationer och meningsfulla firanden för denna viktiga andliga milstolpe."
     },
     "learnMore": "Läs Mer",
     "cta": {

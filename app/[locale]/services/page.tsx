@@ -29,12 +29,6 @@ export default function ServicesPage() {
       href: "#festivities"
     },
     {
-      title: t('services.conference.title'),
-      description: t('services.conference.description'),
-      imageSrc: "/images/conference-hewan.png",
-      href: "#conference"
-    },
-    {
       title: t('services.memorials.title'),
       description: t('services.memorials.description'),
       imageSrc: "/images/hewan-memorial.png",
@@ -47,41 +41,29 @@ export default function ServicesPage() {
       href: "#catering"
     },
     {
-      title: t('services.christmas.title'),
-      description: t('services.christmas.description'),
+      title: t('services.birthdays.title'),
+      description: t('services.birthdays.description'),
       imageSrc: "/refined-wedding-feast.png",
-      href: "#christmas"
+      href: "#birthdays"
     },
     {
-      title: t('services.exhibitions.title'),
-      description: t('services.exhibitions.description'),
+      title: t('services.graduation.title'),
+      description: t('services.graduation.description'),
       imageSrc: "/hewan-photos/hewans-event-3.jpg",
-      href: "#exhibitions"
+      href: "#graduation"
     },
-    // {
-    //   title: t('services.wellness.title'),
-    //   description: t('services.wellness.description'),
-    //   imageSrc: "/hewan-photos/hewans-event-2.jpg",
-    //   href: "#wellness"
-    // },
     {
-      title: t('services.summer.title'),
-      description: t('services.summer.description'),
+      title: t('services.anniversaries.title'),
+      description: t('services.anniversaries.description'),
       imageSrc: "/images/hewan-summer-party-.jpg",
-      href: "#summer"
+      href: "#anniversaries"
     },
     {
-      title: t('services.ceremonies.title'),
-      description: t('services.ceremonies.description'),
+      title: t('services.baptism.title'),
+      description: t('services.baptism.description'),
       imageSrc: "/hewan-photos/hewan-photo-10.jpg",
-      href: "#ceremonies"
+      href: "#baptism"
     },
-    {
-      title: t('services.venues.title'),
-      description: t('services.venues.description'),
-      imageSrc: "/images/hewan-venue.jpg",
-      href: "#venues"
-    }
   ]
 
   return (
