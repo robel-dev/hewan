@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { i18nConfig } from '@/app/i18n/config';
 import "../globals.css";
 import Header from "@/components/header";
+import { Toaster } from "@/components/ui/toaster";
 
 // Import your fonts
 import { Playfair_Display, Cormorant_Garamond, Montserrat } from "next/font/google"
@@ -72,6 +73,7 @@ export default async function LocaleLayout({
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Header />
           {children}
+          <Toaster />
         </NextIntlClientProvider>
       </body>
     </html>

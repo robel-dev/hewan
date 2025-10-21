@@ -9,18 +9,20 @@ import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { useTranslations } from 'next-intl'
-import { Loader2, ChevronRight, CalendarIcon } from "lucide-react"
+import { Loader2, ChevronRight, CalendarIcon, CheckCircle } from "lucide-react"
 import { Calendar } from "@/components/ui/calendar"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { format } from "date-fns"
+import { useToast } from "@/hooks/use-toast"
 
 
-//robelamare20@gmail.com web app url
-const google_apps_script_web_api = 'https://script.google.com/macros/s/AKfycbxtvju82-MeORNLRrlRiJLSXogHQdxnTzTlN8QNdYouInVFFIVK0RqaCZqbgW98NpQLzQ/exec';
-const deployment_id = 'AKfycbxB1gJkjj8kYs_Erij9-pokgeNnYDb2SLG3Nq5Bndndv6bb0ew_gLisV7BKjLtwyPNy8g';
+// Get Google Apps Script configuration from environment variables
+const google_apps_script_web_api = process.env.NEXT_PUBLIC_GOOGLE_APPS_SCRIPT_URL;
+const deployment_id = process.env.NEXT_PUBLIC_GOOGLE_DEPLOYMENT_ID;
 export default function ContactForm() {
   const t = useTranslations();
   const router = useRouter();
+  const { toast } = useToast();
   const [mounted, setMounted] = useState(false);
   const [formStep, setFormStep] = useState(1);
   const [formData, setFormData] = useState({
@@ -50,6 +52,11 @@ export default function ContactForm() {
     setError("")
     
     try {
+      // Check if Google Apps Script URL is configured
+      if (!google_apps_script_web_api) {
+        throw new Error('Google Apps Script URL is not configured');
+      }
+      
       // Log the complete form data being sent
       console.log('Sending complete form data:', formData);
       
@@ -68,8 +75,14 @@ export default function ContactForm() {
         mode: 'no-cors'
       })
       
-      // Show success message or handle response
-      // You might want to add a success state and message here
+      // Show success notification
+      toast({
+        title: "Message Sent Successfully! ✨",
+        description: "Thank you for your inquiry. We'll get back to you within 24 hours.",
+        duration: 5000,
+      });
+      
+      // Reset form data
       setFormData({
         name: "",
         email: "",
@@ -88,7 +101,16 @@ export default function ContactForm() {
       
     } catch (err) {
       console.error('Error submitting form:', err)
-      setError("There was an error submitting your form. Please try again.")
+      const errorMessage = err instanceof Error ? err.message : "There was an error submitting your form. Please try again."
+      setError(errorMessage)
+      
+      // Show error notification
+      toast({
+        title: "Submission Failed ❌",
+        description: errorMessage,
+        variant: "destructive",
+        duration: 5000,
+      });
     } finally {
       setIsSubmitting(false)
     }
