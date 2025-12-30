@@ -7,7 +7,7 @@ import { Separator } from "@/components/ui/separator"
 import { useTranslations } from 'next-intl'
 import { useLocale } from 'next-intl'
 import ServiceCard from "@/components/service-card"
-import ContactForm from "@/components/contact-form"
+import { getServices, type ServiceCardData } from "@/app/[locale]/services/services-data"
 
 type Locale = 'en' | 'sv' | 'ti';
 
@@ -15,56 +15,7 @@ export default function ServicesPage() {
   const t = useTranslations()
   const locale = useLocale() as Locale;
 
-  const services = [
-    {
-      title: t('services.wedding.title'),
-      description: t('services.wedding.description'),
-      imageSrc: "/refined-wedding-moment.png",
-      href: "#weddings"
-    },
-    {
-      title: t('services.festivities.title'),
-      description: t('services.festivities.description'),
-      imageSrc: "/softly-lit-wedding.png",
-      href: "#festivities"
-    },
-    {
-      title: t('services.memorials.title'),
-      description: t('services.memorials.description'),
-      imageSrc: "/images/hewan-memorial.png",
-      href: "#memorials"
-    },
-    {
-      title: t('services.catering.title'),
-      description: t('services.catering.description'),
-      imageSrc: "/catering-hewan.jpg",
-      href: "#catering"
-    },
-    {
-      title: t('services.birthdays.title'),
-      description: t('services.birthdays.description'),
-      imageSrc: "/refined-wedding-feast.png",
-      href: "#birthdays"
-    },
-    {
-      title: t('services.graduation.title'),
-      description: t('services.graduation.description'),
-      imageSrc: "/hewan-photos/hewans-event-3.jpg",
-      href: "#graduation"
-    },
-    {
-      title: t('services.anniversaries.title'),
-      description: t('services.anniversaries.description'),
-      imageSrc: "/images/hewan-summer-party-.jpg",
-      href: "#anniversaries"
-    },
-    {
-      title: t('services.baptism.title'),
-      description: t('services.baptism.description'),
-      imageSrc: "/hewan-photos/hewan-photo-10.jpg",
-      href: "#baptism"
-    },
-  ]
+  const services: ServiceCardData[] = getServices(t)
 
   return (
     <main className="min-h-screen bg-[#faf9f8]">
@@ -92,7 +43,7 @@ export default function ServicesPage() {
           <p className="max-w-4xl font-sans text-sm font-light tracking-[0.15em] leading-relaxed md:text-base lg:text-lg mb-10">
             {t('services.hero.subtitle')}
           </p>
-          <Link href="#contact">
+          <Link href={`/${locale}/services/weddings#contact-weddings`}>
             <Button
               variant="outline"
               className="border-white bg-transparent px-8 py-6 text-xs tracking-[0.15em] text-white hover:bg-white/10"
@@ -112,12 +63,12 @@ export default function ServicesPage() {
         {/* Main Services Grid */}
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 mb-16">
           {services.map((service, index) => (
-            <div key={index} id={service.href.replace('#', '')}>
+            <div key={index}>
               <ServiceCard
                 title={service.title}
                 description={service.description}
-                imageSrc={service.imageSrc}
-                href={service.href}
+                imageSrc={service.cardImage}
+                href={`/${locale}/services/${service.id}`}
               />
             </div>
           ))}
@@ -134,7 +85,7 @@ export default function ServicesPage() {
             {t('services.cta.subtitle')}
           </p>
           <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
-            <Link href="#contact">
+            <Link href={`/${locale}/services/weddings#contact-weddings`}>
               <Button
                 variant="outline"
                 className="border-white bg-transparent px-8 py-6 text-xs tracking-[0.15em] text-white hover:bg-white/10"
@@ -151,16 +102,6 @@ export default function ServicesPage() {
               </Button>
             </Link>
           </div>
-        </div>
-      </section>
-
-      {/* Contact Section - Matching main page */}
-      <section id="contact" className="bg-[#f8f6f4] py-16 md:py-24">
-        <div className="mx-auto max-w-4xl px-4">
-          <h2 className="mb-12 text-center font-display text-2xl font-light tracking-[0.15em] md:text-3xl">
-            {t('contact.title')}
-          </h2>
-          <ContactForm />
         </div>
       </section>
 
@@ -182,7 +123,7 @@ export default function ServicesPage() {
               <Link href={`/${locale}/about`} className="text-xs tracking-wide text-neutral-600 hover:text-neutral-900">
                 {t('navigation.about')}
               </Link>
-              <Link href="#contact" className="text-xs tracking-wide text-neutral-600 hover:text-neutral-900">
+              <Link href={`/${locale}/services/weddings#contact-weddings`} className="text-xs tracking-wide text-neutral-600 hover:text-neutral-900">
                 {t('navigation.contact')}
               </Link>
             </nav>

@@ -58,6 +58,28 @@
       "viewWork": "Se Vårt Arbete"
     }
   },
+  "servicePage": {
+    "sections": {
+      "description": "Tjänstebeskrivning",
+      "included": "Det här ingår",
+      "gallery": "Bildgalleri"
+    },
+    "fallbacks": {
+      "description": "Ingen tjänstebeskrivning tillgänglig för tillfället.",
+      "included": "Paketdetaljer kommer snart.",
+      "gallery": "Inga bilder tillgängliga.",
+      "notFound": "Vi kunde inte hitta den tjänsten. Välj ett annat alternativ från vår tjänstelista."
+    },
+    "defaults": {
+      "descriptionNote": "Vi anpassar varje del efter dina önskemål, från planering till genomförande.",
+      "included": [
+        "Personlig konsultation",
+        "Planering och koordinering",
+        "Uppsättning och stöd på dagen"
+      ],
+      "galleryAlt": "Bild från tjänstgalleriet"
+    }
+  },
   "gallery": {
     "title": "Galleri",
     "viewMore": "Se Hela Galleriet"

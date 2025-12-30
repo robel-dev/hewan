@@ -58,6 +58,28 @@
       "viewWork": "View Our Work"
     }
   },
+  "servicePage": {
+    "sections": {
+      "description": "Service Description",
+      "included": "What's Included",
+      "gallery": "Picture Gallery"
+    },
+    "fallbacks": {
+      "description": "Service details will be added soon.",
+      "included": "Package details will be added soon.",
+      "gallery": "No images available.",
+      "notFound": "We couldn't find that service. Please choose another option from our services list."
+    },
+    "defaults": {
+      "descriptionNote": "We tailor every element to your preferences, from planning to flawless execution.",
+      "included": [
+        "Personalized consultation",
+        "Event planning and coordination",
+        "Setup and day-of support"
+      ],
+      "galleryAlt": "Service gallery image"
+    }
+  },
   "gallery": {
     "title": "Gallery",
     "viewMore": "View Full Gallery"

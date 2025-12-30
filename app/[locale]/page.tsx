@@ -160,25 +160,25 @@ export default function Home() {
             title={t('services.wedding.title')}
             description=""
             imageSrc="/refined-garden-wedding.png"
-            href="/services#weddings"
+            href="/services/weddings"
           />
           <ServiceCard
             title={t('services.catering.title')}
             description=""
             imageSrc="/catering-hewan.jpg"
-            href="/services#catering"
+            href="/services/catering"
           />
           <ServiceCard
             title={t('services.graduation.title')}
             description=""
             imageSrc="/refined-wedding-feast.png"
-            href="/services#graduation"
+            href="/services/graduation"
           />
           <ServiceCard
             title={t('services.baptism.title')}
             description=""
             imageSrc="/images/hewan-summer-party-.jpg"
-            href="/services#baptism"
+            href="/services/baptism"
           />
         </div>
       </section>
