@@ -160,26 +160,36 @@ export default function Home() {
             title={t('services.wedding.title')}
             description=""
             imageSrc="/refined-garden-wedding.png"
-            href="/services/weddings"
+            href={`/${locale}/services/weddings`}
           />
           <ServiceCard
             title={t('services.catering.title')}
             description=""
             imageSrc="/catering-hewan.jpg"
-            href="/services/catering"
+            href={`/${locale}/services/catering`}
           />
           <ServiceCard
             title={t('services.graduation.title')}
             description=""
             imageSrc="/refined-wedding-feast.png"
-            href="/services/graduation"
+            href={`/${locale}/services/graduation`}
           />
           <ServiceCard
             title={t('services.baptism.title')}
             description=""
             imageSrc="/images/hewan-summer-party-.jpg"
-            href="/services/baptism"
+            href={`/${locale}/services/baptism`}
           />
+        </div>
+        <div className="mt-10 text-center">
+          <Link href={`/${locale}/services`}>
+            <Button
+              variant="outline"
+              className="border-neutral-300 bg-transparent text-xs tracking-widest text-neutral-800 hover:bg-neutral-50"
+            >
+              {t('services.browseMore')}
+            </Button>
+          </Link>
         </div>
       </section>
 
