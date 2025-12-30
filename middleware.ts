@@ -7,6 +7,9 @@ export default createMiddleware({
   
   // Used when no locale matches
   defaultLocale: i18nConfig.defaultLocale,
+
+  // Disable automatic locale detection to honor default locale
+  localeDetection: false,
   
   // This is a list of paths that should not be internationalized
   localePrefix: 'always'
