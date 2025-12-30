@@ -93,49 +93,49 @@ export default function Header() {
                   <NavigationMenuContent className="bg-white/95 backdrop-blur-sm border-neutral-200">
                     <div className="grid w-64 gap-1 p-3">
                     <Link
-                      href={`/${locale}/services#weddings`}
+                      href={`/${locale}/services/weddings`}
                       className="block p-3 text-sm font-display tracking-wide text-neutral-800 hover:bg-neutral-50 rounded transition-colors"
                     >
                       {t('services.wedding.title')}
                     </Link>
                     <Link
-                      href={`/${locale}/services#festivities`}
+                      href={`/${locale}/services/festivities`}
                       className="block p-3 text-sm font-display tracking-wide text-neutral-800 hover:bg-neutral-50 rounded transition-colors"
                     >
                       {t('services.festivities.title')}
                     </Link>
                     <Link
-                      href={`/${locale}/services#memorials`}
+                      href={`/${locale}/services/memorials`}
                       className="block p-3 text-sm font-display tracking-wide text-neutral-800 hover:bg-neutral-50 rounded transition-colors"
                     >
                       {t('services.memorials.title')}
                     </Link>
                     <Link
-                      href={`/${locale}/services#catering`}
+                      href={`/${locale}/services/catering`}
                       className="block p-3 text-sm font-display tracking-wide text-neutral-800 hover:bg-neutral-50 rounded transition-colors"
                     >
                       {t('services.catering.title')}
                     </Link>
                     <Link
-                      href={`/${locale}/services#birthdays`}
+                      href={`/${locale}/services/birthdays`}
                       className="block p-3 text-sm font-display tracking-wide text-neutral-800 hover:bg-neutral-50 rounded transition-colors"
                     >
                       {t('services.birthdays.title')}
                     </Link>
                     <Link
-                      href={`/${locale}/services#graduation`}
+                      href={`/${locale}/services/graduation`}
                       className="block p-3 text-sm font-display tracking-wide text-neutral-800 hover:bg-neutral-50 rounded transition-colors"
                     >
                       {t('services.graduation.title')}
                     </Link>
                     <Link
-                      href={`/${locale}/services#anniversaries`}
+                      href={`/${locale}/services/anniversaries`}
                       className="block p-3 text-sm font-display tracking-wide text-neutral-800 hover:bg-neutral-50 rounded transition-colors"
                     >
                       {t('services.anniversaries.title')}
                     </Link>
                     <Link
-                      href={`/${locale}/services#baptism`}
+                      href={`/${locale}/services/baptism`}
                       className="block p-3 text-sm font-display tracking-wide text-neutral-800 hover:bg-neutral-50 rounded transition-colors"
                     >
                       {t('services.baptism.title')}
@@ -299,42 +299,42 @@ export default function Header() {
                 {/* Mobile services submenu */}
                 <div className="ml-4 pb-3 space-y-2">
                   <Link
-                    href={`/${locale}/services#weddings`}
+                    href={`/${locale}/services/weddings`}
                     className="block text-sm font-display tracking-wide text-neutral-600 py-2 hover:text-neutral-800 transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {t('services.wedding.title')}
                   </Link>
                   <Link
-                    href={`/${locale}/services#festivities`}
+                    href={`/${locale}/services/festivities`}
                     className="block text-sm font-display tracking-wide text-neutral-600 py-2 hover:text-neutral-800 transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {t('services.festivities.title')}
                   </Link>
                   <Link
-                    href={`/${locale}/services#catering`}
+                    href={`/${locale}/services/catering`}
                     className="block text-sm font-display tracking-wide text-neutral-600 py-2 hover:text-neutral-800 transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {t('services.catering.title')}
                   </Link>
                   <Link
-                    href={`/${locale}/services#birthdays`}
+                    href={`/${locale}/services/birthdays`}
                     className="block text-sm font-display tracking-wide text-neutral-600 py-2 hover:text-neutral-800 transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {t('services.birthdays.title')}
                   </Link>
                   <Link
-                    href={`/${locale}/services#graduation`}
+                    href={`/${locale}/services/graduation`}
                     className="block text-sm font-display tracking-wide text-neutral-600 py-2 hover:text-neutral-800 transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {t('services.graduation.title')}
                   </Link>
                   <Link
-                    href={`/${locale}/services#baptism`}
+                    href={`/${locale}/services/baptism`}
                     className="block text-sm font-display tracking-wide text-neutral-600 py-2 hover:text-neutral-800 transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >
