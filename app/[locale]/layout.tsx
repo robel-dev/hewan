@@ -68,6 +68,10 @@ export default async function LocaleLayout({
     <html lang={locale} className={`scroll-smooth ${playfair.variable} ${cormorant.variable} ${montserrat.variable} ${geezFont.variable}`}>
       <head>
         <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;700&display=swap" rel="stylesheet" />
+        <link rel="icon" href="/favicon_i/favicon-16x16.png" sizes="16x16" type="image/png" />
+        <link rel="icon" href="/favicon_i/favicon-32x32.png" sizes="32x32" type="image/png" />
+        <link rel="apple-touch-icon" href="/favicon_i/apple-touch-icon.png" />
+        <link rel="manifest" href="/favicon_i/site.webmanifest" />
       </head>
       <body className="font-lora antialiased" suppressHydrationWarning>
         <NextIntlClientProvider locale={locale} messages={messages}>
