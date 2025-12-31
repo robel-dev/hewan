@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react"
+import { useRef, useState } from "react"
 import Image from "next/image"
 
 // Define a helper function to ensure valid image sources
@@ -33,21 +33,16 @@ export default function LogoReel({
   logos = defaultLogos,
 }: LogoReelProps) {
   const [isPaused, setIsPaused] = useState(false)
-  const containerRef = useRef<HTMLDivElement>(null)
-  const [containerWidth, setContainerWidth] = useState(0)
+  const scrollRef = useRef<HTMLDivElement>(null)
 
-  // Update container width on resize
-  useEffect(() => {
-    const updateWidth = () => {
-      if (containerRef.current) {
-        setContainerWidth(containerRef.current.offsetWidth)
-      }
-    }
-
-    updateWidth()
-    window.addEventListener("resize", updateWidth)
-    return () => window.removeEventListener("resize", updateWidth)
-  }, [])
+  const handleScroll = (direction: "left" | "right") => {
+    if (!scrollRef.current) return
+    const amount = scrollRef.current.clientWidth * 0.8
+    scrollRef.current.scrollBy({
+      left: direction === "left" ? -amount : amount,
+      behavior: "smooth",
+    })
+  }
 
   return (
     <div className="w-full overflow-hidden bg-white py-16">
@@ -58,19 +53,32 @@ export default function LogoReel({
         </div>
       )}
 
-      <div
-        ref={containerRef}
-        className="relative w-full py-8"
-      >
-        <div className="flex">
+      <div className="relative w-full py-8">
+        <button
+          type="button"
+          aria-label="Scroll logos left"
+          onClick={() => handleScroll("left")}
+          className="absolute left-3 top-1/2 z-10 -translate-y-1/2 rounded-full border border-transparent bg-white/90 px-3 py-2 font-serif text-lg text-black shadow-sm transition hover:bg-amber-50 md:hidden"
+        >
+          &lt;
+        </button>
+        <button
+          type="button"
+          aria-label="Scroll logos right"
+          onClick={() => handleScroll("right")}
+          className="absolute right-3 top-1/2 z-10 -translate-y-1/2 rounded-full border border-transparent bg-white/90 px-3 py-2 font-serif text-lg text-black shadow-sm transition hover:bg-amber-50 md:hidden"
+        >
+          &gt;
+        </button>
+        <div ref={scrollRef} className="flex items-center overflow-x-auto scroll-smooth">
           {/* Fixed logos in a single row */}
-          <div className="flex min-w-full items-center justify-center gap-8 px-4">
+          <div className="flex w-max items-center gap-8 px-10">
             {logos.map((logo) => {
               const logoSrc = getValidImageSrc(
                 logo.src,
                 `/placeholder.svg?height=60&width=150&query=${encodeURIComponent(logo.alt)}`
               )
-              
+
               return (
                 <div
                   key={logo.id}
